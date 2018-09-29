@@ -23,8 +23,6 @@ Spring Cloud 全家桶：
 
 服务治理是实现微服务的关键。那么有没有好的服务治理方案呢？我想大家都听过或者使用过dubbo，dubbo就是一个带有服务治理功能的RPC框架。dubbo提供了一套较为完整的服务治理方案，所以企业如果要实现服务化的话，dubbo是很好的一个选择。
 
-![Dubbo服务治理图](https://img-blog.csdn.net/20170103143859427?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc3VpZmVuZzMwNTE=/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast)
-
 服务发现与注册作为服务治理最最重要的问题，dubbo中引入了一个注册中心的概念，而zookeeper作为dubbo推荐的注册中心，承担了及其重要的作用。
 
 那么我们如何使用Spring Cloud来实现服务治理呢？答案就是Spring Cloud Eureka，也就是本篇博客要介绍的重点。Spring Cloud Eureka是Spring Cloud Netflix项目下的服务治理模块。而Spring Cloud Netflix项目是Spring Cloud的子项目之一，主要内容是对Netflix公司一系列开源产品的包装，它为Spring Boot应用提供了自配置的Netflix OSS整合。通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路由（Zuul），客户端负载均衡（Ribbon）等。
@@ -161,6 +159,6 @@ eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
 同时启动两个服务，再访问 http://localhost:8761/  出现下图内容则表示服务注册成功：
 ![](https://preview.ibb.co/kvyTu9/2018_09_29_4_53_47_2.png)
 
-这样就基本完成了基础的Spring Cloud搭建，读者可以根据需要查看代码，github地址：[https://github.com/coderqianlq/spring-cloud](https://github.com/coderqianlq/spring-cloud)。
+这样就基本完成了基础的Spring Cloud搭建。
 
 
