@@ -5,6 +5,7 @@ import com.coderqian.eurekacustomer.service.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -26,6 +27,9 @@ public class TestController {
     @Autowired
     private TestService testService;
 
+    @Value("${profile}")
+    private String profile;
+
     @ApiOperation(value = "返回用户输入的结果", notes = "返回用户输入的结果")
     @RequestMapping(value = "/result", method = RequestMethod.GET)
     public String test(@RequestParam(value = "text") String text) {
@@ -42,5 +46,11 @@ public class TestController {
     @RequestMapping(value = "/baseresult", method = RequestMethod.GET)
     public BaseResult testBaseResult(@RequestParam(value = "text") String text) {
         return testService.testBaseResult(text);
+    }
+
+    @ApiOperation(value = "测试读取配置文件中的值", notes = "测试读取配置文件中的值")
+    @RequestMapping(value = "/config", method = RequestMethod.GET)
+    public String testConfig() {
+        return profile;
     }
 }
