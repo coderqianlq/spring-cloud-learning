@@ -11,8 +11,8 @@
 
     <modules>
         <module>eureka-server</module>
-        <module>spring-order</module>
-        <module>spring-customer</module>
+        <module>eureka-order</module>
+        <module>eureka-customer</module>
         <module>api-gateway</module>
     </modules>
 </project>
