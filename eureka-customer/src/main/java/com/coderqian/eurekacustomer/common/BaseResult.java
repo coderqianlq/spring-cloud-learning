@@ -1,5 +1,7 @@
 package com.coderqian.eurekacustomer.common;
 
+import com.coderqian.eurekacustomer.common.constant.Code;
+
 /**
  * @author qianliqing
  * @date 2018-09-28 下午9:05
@@ -23,6 +25,17 @@ public final class BaseResult<T> {
         this();
         this.code = 200;
         this.message = msg;
+    }
+
+    public BaseResult(Code code) {
+        this.code = code.getCode();
+        this.message = code.getMsg();
+    }
+
+    public BaseResult(Code code, T data) {
+        this.code = code.getCode();
+        this.message = code.getMsg();
+        this.data = data;
     }
 
     public BaseResult(int code, String message) {

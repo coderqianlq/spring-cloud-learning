@@ -27,9 +27,6 @@ public class TestController {
     @Autowired
     private TestService testService;
 
-    @Value("${profile}")
-    private String profile;
-
     @ApiOperation(value = "返回用户输入的结果", notes = "返回用户输入的结果")
     @RequestMapping(value = "/result", method = RequestMethod.GET)
     public String test(@RequestParam(value = "text") String text) {
@@ -48,9 +45,9 @@ public class TestController {
         return testService.testBaseResult(text);
     }
 
-    @ApiOperation(value = "测试读取配置文件中的值", notes = "测试读取配置文件中的值")
-    @RequestMapping(value = "/config", method = RequestMethod.GET)
-    public String testConfig() {
-        return profile;
+    @ApiOperation(value = "根据用户id获取用户信息", notes = "根据用户id获取用户信息")
+    @RequestMapping(value = "/find", method = RequestMethod.GET)
+    public BaseResult testMybatis(@RequestParam("id") String id) {
+        return testService.testMybatis(id);
     }
 }

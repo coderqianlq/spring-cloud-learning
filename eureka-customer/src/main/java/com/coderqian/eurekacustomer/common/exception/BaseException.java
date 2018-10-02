@@ -12,7 +12,7 @@ import com.coderqian.eurekacustomer.common.BaseResult;
 
 public abstract class BaseException extends RuntimeException {
 
-    private int codeInt;
+    private int code;
     private String msg;
     private BaseResult baseResult;
 
@@ -20,19 +20,19 @@ public abstract class BaseException extends RuntimeException {
         super();
     }
 
-    BaseException(int codeInt, String msg) {
+    BaseException(int code, String msg) {
         super(msg);
-        this.codeInt = codeInt;
+        this.code = code;
         this.msg = msg;
-        this.baseResult = new BaseResult(codeInt, msg);
+        this.baseResult = new BaseResult(code, msg);
     }
 
-    public int getCodeInt() {
-        return codeInt;
+    public int getCode() {
+        return code;
     }
 
-    public void setCodeInt(int codeInt) {
-        this.codeInt = codeInt;
+    public void setCode(int code) {
+        this.code = code;
     }
 
     public String getMsg() {

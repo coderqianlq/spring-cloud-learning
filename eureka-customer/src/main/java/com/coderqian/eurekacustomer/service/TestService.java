@@ -33,4 +33,12 @@ public interface TestService {
      * @return
      */
     BaseResult testBaseResult(String text);
+
+    /**
+     * 测试mybatis接口
+     *
+     * @param id 用户id
+     * @return
+     */
+    BaseResult testMybatis(String id);
 }
