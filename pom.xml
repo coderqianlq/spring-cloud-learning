@@ -15,5 +15,6 @@
         <module>eureka-customer</module>
         <module>api-gateway</module>
         <module>config-server</module>
+        <module>feign-server</module>
     </modules>
 </project>
