@@ -1,6 +1,8 @@
 package com.coderqian.feginserver.service;
 
+import com.coderqian.feginserver.configuration.fallback.HystrixClientFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * mail: qianlq0824@gmail.com
  */
 
-@FeignClient(value = "eureka-customer")
+@FeignClient(value = "eureka-customer", fallback = HystrixClientFallback.class)
+@Service
 public interface TestCustomerService {
 
     @RequestMapping(value = "/test/result", method = RequestMethod.GET)
