@@ -6,6 +6,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -19,10 +20,14 @@ import org.springframework.web.bind.annotation.RestController;
  * 测试类
  */
 
+@RefreshScope
 @RestController
 @RequestMapping(value = "/test")
 @Api(value = "测试", description = "测试模块", position = 1)
 public class TestController {
+
+    @Value("${profile}")
+    private String profile;
 
     @Autowired
     private TestService testService;
@@ -49,5 +54,11 @@ public class TestController {
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public BaseResult testMybatis(@RequestParam("id") String id) {
         return testService.testMybatis(id);
+    }
+
+    @ApiOperation(value = "测试消息总线", notes = "测试消息总线")
+    @RequestMapping(value = "/bus", method = RequestMethod.GET)
+    public String testBus() {
+        return profile;
     }
 }
