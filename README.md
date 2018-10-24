@@ -5,17 +5,18 @@
 Spring Cloud是一个基于Spring Boot实现的云应用开发工具，它为基于JVM的云应用开发中涉及的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。
 
 Spring Cloud 全家桶：
-   -  | Spring Cloud
-|---|---|
-服务注册中心 | Spring Cloud Netflix Eureka
-服务调用方式 | REST API
-服务网关 | Spring Cloud Netflix Zuul
-断路器 | Spring Cloud Netflix Hystrix
-分布式配置 | Spring Cloud Config
-服务跟踪 | Spring Cloud Sleuth
-消息总线 | Spring Cloud Bus
-数据流 | Spring Cloud Stream
-批量任务 | Spring Cloud Task
+
+|  -  | Spring Cloud |
+| :---: | :---: |
+| 服务注册中心 | Spring Cloud Netflix Eureka |
+| 服务调用方式 | REST API |
+| 服务网关 | Spring Cloud Netflix Zuul |
+| 断路器 | Spring Cloud Netflix Hystrix |
+| 分布式配置 | Spring Cloud Config |
+| 服务跟踪 | Spring Cloud Sleuth |
+| 消息总线 | Spring Cloud Bus |
+| 数据流 | Spring Cloud Stream |
+| 批量任务 | Spring Cloud Task |
 
 **2. 微服务架构**
 
@@ -162,6 +163,6 @@ eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
 同时启动两个服务，再访问 http://localhost:8761/  出现下图内容则表示服务注册成功：
 ![](https://preview.ibb.co/kvyTu9/2018_09_29_4_53_47_2.png)
 
-这样就基本完成了基础的Spring Cloud搭建。
+这样就基本完成了基础的Spring Cloud搭建。Spring Cloud其它组件的搭建的程可参考[我的博客](https://blog.csdn.net/weixin_36759405)。
 
 
