@@ -3,7 +3,7 @@
 	<br/>
 	
   [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud)
-  ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/coderqianlq/spring-cloud/blob/master/LICENSE)
 </div>
 
 **1. Spring Cloud简介**
