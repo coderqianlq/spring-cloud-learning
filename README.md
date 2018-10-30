@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://image.ibb.co/fY9Lte/Spring_Logos_CLOUD_HOR.png"/>
+  <img src="https://image.ibb.co/fY9Lte/Spring_Logos_CLOUD_HOR.png" width="80%"/>
 	<br/>
 	
   ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
@@ -13,7 +13,7 @@ Spring Cloud是一个基于Spring Boot实现的云应用开发工具，它为基
 Spring Cloud 全家桶：
 
 <center>
-    <table width="800" style="text-align: center;">
+    <table width="800">
 	<tr><td width="300">服务注册中心</td><td width="500">Spring Cloud Netflix Eureka</td></tr>
 	<tr><td width="300">服务调用方式</td><td width="500">REST API</td></tr>
 	<tr><td width="300">服务网关</td><td width="500">Spring Cloud Netflix Zuul</td></tr>
@@ -25,18 +25,6 @@ Spring Cloud 全家桶：
 	<tr><td width="300">批量任务</td><td width="500">Spring Cloud Task</td></tr>
     </table>
 </center>
-
-|  -  | Spring Cloud |
-| :---: | :---: |
-| 服务注册中心 | Spring Cloud Netflix Eureka |
-| 服务调用方式 | REST API |
-| 服务网关 | Spring Cloud Netflix Zuul |
-| 断路器 | Spring Cloud Netflix Hystrix |
-| 分布式配置 | Spring Cloud Config |
-| 服务跟踪 | Spring Cloud Sleuth |
-| 消息总线 | Spring Cloud Bus |
-| 数据流 | Spring Cloud Stream |
-| 批量任务 | Spring Cloud Task |
 
 **2. 微服务架构**
 
