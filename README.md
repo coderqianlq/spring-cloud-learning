@@ -1,4 +1,10 @@
-<center><img src="https://image.ibb.co/fY9Lte/Spring_Logos_CLOUD_HOR.png" alt="Spring_Logos_CLOUD_HOR" border="0"></center>
+<div align="center">
+  <img src="https://image.ibb.co/fY9Lte/Spring_Logos_CLOUD_HOR.png"/>
+	<br/>
+	
+  ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
+  ![License](https://img.shields.io/badge/license-MIT-blue.svg)
+</div>
 
 **1. Spring Cloud简介**
 
