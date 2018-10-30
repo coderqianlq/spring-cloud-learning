@@ -12,8 +12,8 @@ Spring Cloud是一个基于Spring Boot实现的云应用开发工具，它为基
 
 Spring Cloud 全家桶：
 
-<table width="100%">
-<tr><td width="50%">1</td></tr>	
+<table width="400">
+<tr><td width="150">1</td></tr>	
 </table>
 
 |  -  | Spring Cloud |
