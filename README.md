@@ -2,7 +2,7 @@
   <img src="https://image.ibb.co/fY9Lte/Spring_Logos_CLOUD_HOR.png" width="80%"/>
 	<br/>
 	
-  ![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)
+  [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud)
   ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 </div>
 
