@@ -12,6 +12,10 @@ Spring Cloud是一个基于Spring Boot实现的云应用开发工具，它为基
 
 Spring Cloud 全家桶：
 
+<table width="100%">
+<tr><td>1</td></tr>	
+</table>
+
 |  -  | Spring Cloud |
 | :---: | :---: |
 | 服务注册中心 | Spring Cloud Netflix Eureka |
