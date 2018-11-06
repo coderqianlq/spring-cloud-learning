@@ -26,7 +26,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "测试", description = "测试模块", position = 1)
 public class TestController {
 
-    @Value("${profile}")
+//    @Value("${profile}")
     private String profile;
 
     @Autowired
