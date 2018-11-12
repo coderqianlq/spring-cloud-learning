@@ -38,20 +38,6 @@ Spring Cloud 全家桶：
 
 那么我们如何使用Spring Cloud来实现服务治理呢？答案就是Spring Cloud Eureka，也就是本篇博客要介绍的重点。Spring Cloud Eureka是Spring Cloud Netflix项目下的服务治理模块。而Spring Cloud Netflix项目是Spring Cloud的子项目之一，主要内容是对Netflix公司一系列开源产品的包装，它为Spring Boot应用提供了自配置的Netflix OSS整合。通过一些简单的注解，开发者就可以快速的在应用中配置一下常用模块并构建庞大的分布式系统。它主要提供的模块包括：服务发现（Eureka），断路器（Hystrix），智能路由（Zuul），客户端负载均衡（Ribbon）等。
 
-以下是笔者翻阅资料后对zookeeper和eureka进行的比较总结：
-
-* Eureka 保证AP
-Eureka中各个节点都是平等的，几个节点挂掉不会影响正常节点的工作，剩余节点依然可以提供注册和查询服务。而Eureka的客户端在向某个Eureka注册时如果发现连接失败，则会自动切换至其它节点，从而保证注册服务可用（保证可用性），只不过查到的信息可能不是最新的（不保证强一致性）。除此之外，Eureka还有一种自我保护机制，如果在15分钟内超过85%的节点都没有正常的心跳，那么Eureka就认为客户端与注册中心出现了网络故障，此时会出现以下几种情况：
-   1. Eureka不再从注册列表中移除因为长时间没收到心跳而应该过期的服务。
-   2. Eureka仍然能够接受新服务的注册和查询请求，但是不会被同步到其它节点上（即保证当前节点依然可用）。
-   3. 当网络稳定时，当前Eureka新的注册信息会被同步到其它节点中。
-
-  **Eureka还有客户端缓存功能**
-
-* <font size=3>Zookeeper 保证CP
-当master节点因为网络故障与其他节点失去联系时，剩余节点会重新进行leader选举。在选举期间整个zk集群都是不可用的，这就导致在选举期间注册服务瘫痪。</font>
-
-
 **4. 动手搭服务发现和注册**
 
 **第一步：创建服务注册中心**
@@ -171,6 +157,6 @@ eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
 同时启动两个服务，再访问 http://localhost:8761/  出现下图内容则表示服务注册成功：
 ![](https://preview.ibb.co/kvyTu9/2018_09_29_4_53_47_2.png)
 
-这样就基本完成了基础的Spring Cloud搭建。Spring Cloud其它组件的搭建的程可参考[我的博客](https://blog.csdn.net/weixin_36759405)。
+这样就基本完成了基础的Spring Cloud搭建。Spring Cloud其它组件的搭建教程可参考[我的博客](https://blog.csdn.net/weixin_36759405)。
 
 
