@@ -1,4 +1,4 @@
-package com.coderqian.feginserver.configuration;
+package com.coderqian.feignserver.configuration;
 
 import com.netflix.hystrix.HystrixCommand;
 import feign.Feign;
@@ -7,7 +7,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 /**

@@ -1,4 +1,4 @@
-package com.coderqian.feginserver;
+package com.coderqian.feignserver;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
