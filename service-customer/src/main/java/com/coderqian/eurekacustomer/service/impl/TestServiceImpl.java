@@ -4,10 +4,15 @@ import com.coderqian.eurekacustomer.common.BaseResult;
 import com.coderqian.eurekacustomer.common.BaseResultFactory;
 import com.coderqian.eurekacustomer.common.constant.Code;
 import com.coderqian.eurekacustomer.common.exception.BusinessException;
+import com.coderqian.eurekacustomer.entity.User;
 import com.coderqian.eurekacustomer.mapper.UserMapper;
 import com.coderqian.eurekacustomer.service.TestService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author qianliqing
@@ -39,5 +44,13 @@ public class TestServiceImpl implements TestService {
     @Override
     public BaseResult testMybatis(String id) {
         return BaseResultFactory.createSuccessResult(userMapper.findUserById(id));
+    }
+
+    @Override
+    public BaseResult testPageHelper(Integer pageNum, Integer pageSize) {
+        PageHelper.startPage(pageNum, pageSize);
+        List<User> users = userMapper.findAll();
+        PageInfo<User> page = new PageInfo<>(users);
+        return BaseResultFactory.createSuccessResult(page);
     }
 }

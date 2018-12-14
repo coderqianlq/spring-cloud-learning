@@ -2,7 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.coderqian.eurekacustomer.mapper.UserMapper">
 
+    <sql id="user">
+            id id,
+            name name
+    </sql>
+
+    <select id="findAll" resultType="User">
+        select
+            <include refid="user"/>
+        from user
+    </select>
+
     <select id="findUserById" parameterType="java.lang.String" resultType="User">
-      SELECT * FROM user WHERE id = #{id}
+        select
+            <include refid="user"/>
+        from user
+        <where>
+            id = #{id}
+        </where>
     </select>
 </mapper>
