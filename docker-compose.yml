@@ -1,0 +1,16 @@
+version: '3'
+services:
+  eureka-server:
+    image: qianlq/eureka-server
+    restart: always
+    ports:
+      - 8761:8761
+    hostname: eureka-server
+
+  api-gateway:
+    image: qianlq/api-gateway
+    restart: always
+    ports:
+      - 9090:9090
+    links:
+      - eureka-server
