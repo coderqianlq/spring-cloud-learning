@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * mail: qianlq0824@gmail.com
  */
 
-@FeignClient(value = "eureka-customer", fallback = HystrixClientFallback.class)
+@FeignClient(value = "service-customer", fallback = HystrixClientFallback.class)
 @Service
 public interface TestCustomerService {
 
