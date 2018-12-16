@@ -1,4 +1,4 @@
-package com.coderqian.eurekacustomer;
+package com.coderqian.eurekaorder;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,9 +6,9 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class EurekaCustomerApplication {
+public class ServiceOrderApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EurekaCustomerApplication.class, args);
+		SpringApplication.run(ServiceOrderApplication.class, args);
 	}
 }
