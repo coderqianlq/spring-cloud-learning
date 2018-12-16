@@ -45,7 +45,7 @@ public class Swagger2 {
 
     private ApiInfo apiInfo(){
         return new ApiInfoBuilder()
-                .title("eureka-order")
+                .title("service-order")
                 .description("Demo project for Spring Boot")
                 .termsOfServiceUrl("http://com.coderqian")
                 .version("1.0")

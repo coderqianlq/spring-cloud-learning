@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * mail: qianlq0824@gmail.com
  */
 
-@FeignClient(value = "eureka-order")
+@FeignClient(value = "service-order")
 public interface TestOrderService {
 
     @RequestMapping(value = "/test/result", method = RequestMethod.GET)
