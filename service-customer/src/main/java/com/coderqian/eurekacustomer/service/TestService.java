@@ -14,7 +14,7 @@ public interface TestService {
      * 测试接口
      *
      * @param text 测试数据
-     * @return
+     * @return String
      */
     String test(String text);
 
@@ -22,7 +22,7 @@ public interface TestService {
      * 测试接口
      *
      * @param text 测试数据
-     * @return
+     * @return void
      */
     void testException(String text);
 
@@ -30,7 +30,7 @@ public interface TestService {
      * 测试接口
      *
      * @param text 测试数据
-     * @return
+     * @return BaseResult
      */
     BaseResult testBaseResult(String text);
 
@@ -38,7 +38,16 @@ public interface TestService {
      * 测试mybatis接口
      *
      * @param id 用户id
-     * @return
+     * @return BaseResult
      */
     BaseResult testMybatis(String id);
+
+    /**
+     * 测试Mybatis分页插件
+     *
+     * @param pageNum  当前页码
+     * @param pageSize 每页长度
+     * @return BaseResult
+     */
+    BaseResult testPageHelper(Integer pageNum, Integer pageSize);
 }

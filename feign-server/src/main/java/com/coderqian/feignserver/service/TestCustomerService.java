@@ -1,6 +1,6 @@
-package com.coderqian.feginserver.service;
+package com.coderqian.feignserver.service;
 
-import com.coderqian.feginserver.configuration.fallback.HystrixClientFallback;
+import com.coderqian.feignserver.configuration.fallback.HystrixClientFallback;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;

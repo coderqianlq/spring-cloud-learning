@@ -35,11 +35,11 @@ public class ServiceLogAOP {
         Parameter[] parameters = method.getParameters();
         String targetClassName = joinPoint.getTarget().getClass().getName();
         Object[] args = joinPoint.getArgs();
-        LogUtils.info("className:" + targetClassName);
-        LogUtils.info("methodName:" + methodName);
+        LogUtils.info("className: " + targetClassName);
+        LogUtils.info("methodName: " + methodName);
         if (args != null && args.length > 0) {
             for (int i = 0; i < args.length; i++) {
-                LogUtils.info(parameters[i].getName() + " : " + parameters[i].getType().getName() + " : " + args[i]);
+                LogUtils.info(parameters[i].getName() + ": " + parameters[i].getType().getName() + ": " + args[i]);
             }
         }
         return joinPoint.proceed();

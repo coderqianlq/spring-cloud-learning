@@ -1,4 +1,4 @@
-package com.coderqian.feginserver.service;
+package com.coderqian.feignserver.service;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;

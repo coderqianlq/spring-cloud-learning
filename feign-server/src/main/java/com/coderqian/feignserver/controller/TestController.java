@@ -1,7 +1,7 @@
-package com.coderqian.feginserver.controller;
+package com.coderqian.feignserver.controller;
 
-import com.coderqian.feginserver.service.TestCustomerService;
-import com.coderqian.feginserver.service.TestOrderService;
+import com.coderqian.feignserver.service.TestCustomerService;
+import com.coderqian.feignserver.service.TestOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

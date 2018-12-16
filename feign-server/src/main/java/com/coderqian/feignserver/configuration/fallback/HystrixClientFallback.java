@@ -1,6 +1,6 @@
-package com.coderqian.feginserver.configuration.fallback;
+package com.coderqian.feignserver.configuration.fallback;
 
-import com.coderqian.feginserver.service.TestCustomerService;
+import com.coderqian.feignserver.service.TestCustomerService;
 import org.springframework.stereotype.Component;
 
 /**
