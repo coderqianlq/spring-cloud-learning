@@ -30,6 +30,12 @@ public class TestController {
     //    @Value("${profile}")
     private String profile;
 
+//    @Value("${mysql}")
+    private String mysql;
+
+//    @Value("${redis}")
+    private String redis;
+
     @Autowired
     private TestService testService;
 
@@ -55,6 +61,12 @@ public class TestController {
     @RequestMapping(value = "/find", method = RequestMethod.GET)
     public BaseResult testMybatis(@ApiParam(value = "用户id", required = true) @RequestParam("id") String id) {
         return testService.testMybatis(id);
+    }
+
+    @ApiOperation(value = "读取配置文件", notes = "读取配置文件")
+    @RequestMapping(value = "/config", method = RequestMethod.GET)
+    public String testConfig() {
+        return "mysql:" + mysql + ", redis:" + redis;
     }
 
     @ApiOperation(value = "测试消息总线", notes = "测试消息总线")
