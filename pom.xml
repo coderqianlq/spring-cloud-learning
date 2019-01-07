@@ -17,6 +17,7 @@
         <module>config-server</module>
         <module>feign-server</module>
         <module>zipkin-server</module>
+        <module>consul-server</module> <!-- consul 注册中心 -->
     </modules>
 
     <parent>
