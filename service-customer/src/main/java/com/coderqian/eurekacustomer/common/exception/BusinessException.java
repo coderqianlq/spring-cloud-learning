@@ -2,7 +2,6 @@ package com.coderqian.eurekacustomer.common.exception;
 
 import com.coderqian.eurekacustomer.common.BaseResult;
 import com.coderqian.eurekacustomer.common.constant.Code;
-import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
 /**
@@ -14,7 +13,6 @@ import lombok.NoArgsConstructor;
  */
 
 @NoArgsConstructor
-@AllArgsConstructor
 public final class BusinessException extends BaseException {
 
     public BusinessException(Code code) {
