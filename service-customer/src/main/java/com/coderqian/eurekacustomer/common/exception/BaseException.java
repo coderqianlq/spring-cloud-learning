@@ -1,6 +1,8 @@
 package com.coderqian.eurekacustomer.common.exception;
 
 import com.coderqian.eurekacustomer.common.BaseResult;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 /**
  * @author qianliqing
@@ -10,6 +12,8 @@ import com.coderqian.eurekacustomer.common.BaseResult;
  * 基本异常类
  */
 
+@Data
+@AllArgsConstructor
 public abstract class BaseException extends RuntimeException {
 
     private int code;
@@ -25,29 +29,5 @@ public abstract class BaseException extends RuntimeException {
         this.code = code;
         this.msg = msg;
         this.baseResult = new BaseResult(code, msg);
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
-
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
-    public BaseResult getBaseResult() {
-        return baseResult;
-    }
-
-    public void setBaseResult(BaseResult baseResult) {
-        this.baseResult = baseResult;
     }
 }
