@@ -1,6 +1,8 @@
 package com.coderqian.eurekacustomer.common;
 
 import com.coderqian.eurekacustomer.common.constant.Code;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 /**
  * @author qianliqing
@@ -11,6 +13,8 @@ import com.coderqian.eurekacustomer.common.constant.Code;
  */
 
 @SuppressWarnings("unchecked")
+@Data
+@AllArgsConstructor
 public final class BaseResult<T> {
 
     private int code;
@@ -41,36 +45,6 @@ public final class BaseResult<T> {
     public BaseResult(int code, String message) {
         this.code = code;
         this.message = message;
-    }
-
-    public BaseResult(int code, String message, T data) {
-        this.code = code;
-        this.message = message;
-        this.data = data;
-    }
-
-    public int getCode() {
-        return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
-    }
-
-    public String getMessage() {
-        return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
     }
 
     @Override
