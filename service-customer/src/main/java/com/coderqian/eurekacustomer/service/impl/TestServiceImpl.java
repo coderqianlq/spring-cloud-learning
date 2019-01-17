@@ -4,7 +4,9 @@ import com.coderqian.eurekacustomer.common.BaseResult;
 import com.coderqian.eurekacustomer.common.BaseResultFactory;
 import com.coderqian.eurekacustomer.common.constant.Code;
 import com.coderqian.eurekacustomer.common.exception.BusinessException;
-import com.coderqian.eurekacustomer.entity.User;
+import com.coderqian.eurekacustomer.converter.User2UserDtoMapper;
+import com.coderqian.eurekacustomer.model.entity.UserEntity;
+import com.coderqian.eurekacustomer.model.dto.UserDto;
 import com.coderqian.eurekacustomer.mapper.UserMapper;
 import com.coderqian.eurekacustomer.service.TestService;
 import com.github.pagehelper.PageHelper;
@@ -52,8 +54,16 @@ public class TestServiceImpl implements TestService {
     @Override
     public BaseResult testPageHelper(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
-        List<User> users = userMapper.findAll();
-        PageInfo<User> page = new PageInfo<>(users);
+        List<UserEntity> users = userMapper.findAll();
+        List<UserDto> userDto = User2UserDtoMapper.INSTANCE.users2UserDtos(users);
+        PageInfo<UserDto> page = new PageInfo<>(userDto);
         return BaseResultFactory.createSuccessResult(page);
+    }
+
+    @Override
+    public BaseResult testMapStruct(String id) {
+        UserEntity user = userMapper.findUserById(id);
+        UserDto dto = User2UserDtoMapper.INSTANCE.user2UserDto(user);
+        return BaseResultFactory.createSuccessResult(dto);
     }
 }

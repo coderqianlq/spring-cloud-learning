@@ -4,7 +4,8 @@
 
     <sql id="user">
             id id,
-            name name
+            name name,
+            birth birth
     </sql>
 
     <select id="findAll" resultType="User">

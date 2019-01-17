@@ -27,13 +27,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "测试", description = "测试模块", position = 1)
 public class TestController {
 
-//    @Value("${profile}")
+    //    @Value("${profile}")
     private String profile;
 
-//    @Value("${mysql}")
+    //    @Value("${mysql}")
     private String mysql;
 
-//    @Value("${redis}")
+    //    @Value("${redis}")
     private String redis;
 
     @Autowired
@@ -80,5 +80,11 @@ public class TestController {
     public BaseResult testPage(@ApiParam(value = "当前页码", required = true) @RequestParam("pageNum") Integer pageNum,
                                @ApiParam(value = "每页长度", required = true) @RequestParam("pageSize") Integer pageSize) {
         return testService.testPageHelper(pageNum, pageSize);
+    }
+
+    @ApiOperation(value = "测试MapStruct", notes = "测试MapStruct")
+    @RequestMapping(value = "/struct", method = RequestMethod.GET)
+    public BaseResult testMapStruct(@ApiParam(value = "id", required = true) @RequestParam("id") String id) {
+        return testService.testMapStruct(id);
     }
 }
