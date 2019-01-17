@@ -49,4 +49,12 @@ public interface TestService {
      * @return BaseResult
      */
     BaseResult testPageHelper(Integer pageNum, Integer pageSize);
+
+    /**
+     * 测试MapStruct
+     *
+     * @param id 用户id
+     * @return BaseResult
+     */
+    BaseResult testMapStruct(String id);
 }

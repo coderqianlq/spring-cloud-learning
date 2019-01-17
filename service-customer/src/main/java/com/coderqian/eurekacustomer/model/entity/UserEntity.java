@@ -1,9 +1,8 @@
-package com.coderqian.eurekacustomer.entity;
+package com.coderqian.eurekacustomer.model.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.apache.ibatis.type.Alias;
 
 import java.io.Serializable;
 
@@ -16,11 +15,13 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User implements Serializable {
+public class UserEntity extends BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private String id;
 
     private String name;
+
+    private String birth;
 }

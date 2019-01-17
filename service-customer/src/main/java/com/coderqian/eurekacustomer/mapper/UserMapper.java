@@ -1,7 +1,8 @@
 package com.coderqian.eurekacustomer.mapper;
 
-import com.coderqian.eurekacustomer.entity.User;
+import com.coderqian.eurekacustomer.model.entity.UserEntity;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public interface UserMapper {
      *
      * @return List<User>
      */
-    List<User> findAll();
+    List<UserEntity> findAll();
 
     /**
      * 根据用户id查询
@@ -27,5 +28,5 @@ public interface UserMapper {
      * @param id 用户id
      * @return User
      */
-    User findUserById(String id);
+    UserEntity findUserById(@Param("id") String id);
 }
