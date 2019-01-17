@@ -18,7 +18,9 @@
             <include refid="user"/>
         from user
         <where>
-            id = #{id}
+            <if test="id != null and id != ''">
+              id = #{id}
+            </if>
         </where>
     </select>
 </mapper>

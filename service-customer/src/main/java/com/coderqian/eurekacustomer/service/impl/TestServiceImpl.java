@@ -9,6 +9,7 @@ import com.coderqian.eurekacustomer.mapper.UserMapper;
 import com.coderqian.eurekacustomer.service.TestService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ import java.util.List;
  * mail: qianlq0824@gmail.com
  */
 
+@Slf4j
 @Service
 public class TestServiceImpl implements TestService {
 
@@ -38,6 +40,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public BaseResult testBaseResult(String text) {
+        log.info("日志测试：{}", text);
         return new BaseResult(text);
     }
 
