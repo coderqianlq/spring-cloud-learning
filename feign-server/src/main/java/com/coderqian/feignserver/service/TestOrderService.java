@@ -14,6 +14,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @FeignClient(value = "service-order")
 public interface TestOrderService {
 
+    /**
+     * 测试
+     *
+     * @param text 测试数据
+     * @return String
+     */
     @RequestMapping(value = "/test/result", method = RequestMethod.GET)
     String testOrder(@RequestParam(value = "text") String text);
 }

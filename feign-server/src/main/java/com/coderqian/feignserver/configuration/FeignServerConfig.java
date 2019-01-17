@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Scope;
 
 //@Configuration
 @ConditionalOnClass({HystrixCommand.class, HystrixFeign.class})
-public class FeignServerConfiguration {
+public class FeignServerConfig {
 
     @Bean
     @Scope("prototype")

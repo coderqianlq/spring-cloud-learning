@@ -17,6 +17,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Service
 public interface TestCustomerService {
 
+    /**
+     * 测试
+     *
+     * @param text 测试数据
+     * @return String
+     */
     @RequestMapping(value = "/test/result", method = RequestMethod.GET)
     String testCustomer(@RequestParam(value = "text") String text);
 }
