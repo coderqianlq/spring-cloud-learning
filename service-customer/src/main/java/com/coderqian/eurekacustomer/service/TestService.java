@@ -22,7 +22,6 @@ public interface TestService {
      * 测试接口
      *
      * @param text 测试数据
-     * @return void
      */
     void testException(String text);
 
