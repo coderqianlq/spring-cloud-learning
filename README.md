@@ -70,7 +70,7 @@ public class EurekaServerApplication {
 ```
 
 在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为，只需要在application.properties配置文件中增加如下信息：
-```java
+```properties
 spring.application.name=eureka-server
 server.port=8761
 eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
@@ -131,7 +131,7 @@ public class EurekaOrderApplication {
 ```
 
 我们在完成以上工作后，再继续对eureka-order的application.properties做一些配置工作，具体如下：
-```java
+```properties
 spring.application.name=eureka-order
 server.port=8100
 eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
