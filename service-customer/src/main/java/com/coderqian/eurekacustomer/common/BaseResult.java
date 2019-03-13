@@ -7,7 +7,7 @@ import lombok.Data;
 /**
  * @author qianliqing
  * @date 2018-09-28 下午9:05
- * mail: 1242202279@qq.com
+ * mail: qianlq0824@gmail.com
  * <p>
  * 统一的返回类型
  */
