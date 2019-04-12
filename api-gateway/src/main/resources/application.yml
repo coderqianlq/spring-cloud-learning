@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: api-gateway
+
+#zuul.routes.api-a.path=/customer/**
+#zuul.routes.api-a.serviceId=service-customer
+
+#zuul.routes.api-b.path=/order/**
+#zuul.routes.api-b.serviceId=service-order
+
+server:
+  port: 9090
+eureka:
+  client:
+    service-url:
+      default-zone: http://127.0.0.1:8761/eureka
+zuul:
+  ignored-services: '*' # 禁止服务自动添加
+  routes:
+    api-c:
+      path: /feign/**
+      service-id: feign-server # 由网关分发到feign，再经feign负载均衡
+
+#ribbon.ReadTimeout=60000
+#ribbon.ConnectTimeout=60000

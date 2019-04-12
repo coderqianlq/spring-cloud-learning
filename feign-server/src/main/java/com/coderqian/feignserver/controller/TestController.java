@@ -23,6 +23,11 @@ public class TestController {
     @Autowired
     private TestOrderService testOrderService;
 
+    @RequestMapping(value = "test", method = RequestMethod.GET)
+    public String test(@RequestParam(value = "text") String text) {
+        return text;
+    }
+
     @RequestMapping(value = "/customer", method = RequestMethod.GET)
     public String getCustomer(@RequestParam(value = "text") String text) {
         return testCustomerService.testCustomer(text);
