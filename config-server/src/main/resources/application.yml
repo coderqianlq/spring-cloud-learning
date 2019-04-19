@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/coderqianlq/spring-cloud-cli/
+          search-paths: config-coderqian
+          username:
+          password:
+server:
+  port: 1201

@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: service-customer
+  cloud:
+    config:
+      label: master
+      profile: dev
+      name: service-customer,service-customer-mysql,service-customer-redis
+      uri: http://127.0.0.1:1201/
+  profiles:
+    active: dev
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    username: guest
+    password: guest
+
+server:
+  port: 8200
+
+management:
+  security:
+    enabled: false
+
+
+
