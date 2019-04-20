@@ -57,4 +57,13 @@ public interface TestService {
      * @return BaseResult
      */
     BaseResult testMapStruct(String id);
+
+    /**
+     * 新增用户
+     *
+     * @param name  姓名
+     * @param birth 出生日期
+     * @return BaseResult
+     */
+    BaseResult addUser(String name, String birth);
 }

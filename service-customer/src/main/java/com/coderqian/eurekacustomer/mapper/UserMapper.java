@@ -29,4 +29,12 @@ public interface UserMapper {
      * @return User
      */
     UserEntity findUserById(@Param("id") String id);
+
+    /**
+     * 插入用户，返回用户id
+     *
+     * @param user 用户实体
+     * @return Long
+     */
+    Long insertUser(@Param("user") UserEntity user);
 }

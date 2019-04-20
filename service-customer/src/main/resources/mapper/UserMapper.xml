@@ -24,4 +24,12 @@
             </if>
         </where>
     </select>
+
+    <insert id="insertUser" parameterType="com.coderqian.eurekacustomer.model.entity.UserEntity">
+        <selectKey keyProperty="id" resultType="string" order="BEFORE">
+            select replace(uuid(), '-', '') as id from dual
+        </selectKey>
+        insert into user(id, name, birth)
+        values (#{id}, #{user.name}, #{user.birth})
+    </insert>
 </mapper>
