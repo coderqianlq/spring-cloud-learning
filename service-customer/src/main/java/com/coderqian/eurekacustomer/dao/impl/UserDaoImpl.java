@@ -4,6 +4,7 @@ import com.coderqian.eurekacustomer.dao.UserDao;
 import com.coderqian.eurekacustomer.mapper.UserMapper;
 import com.coderqian.eurekacustomer.model.entity.UserEntity;
 import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.Resource;
@@ -29,5 +30,11 @@ public class UserDaoImpl implements UserDao {
         userMapper.insertUser(user);
         user.setId(user.getId());
         return user;
+    }
+
+    @Override
+    @Cacheable(cacheNames = "findUserById")
+    public UserEntity findUser(String id) {
+        return userMapper.findUserById(id);
     }
 }

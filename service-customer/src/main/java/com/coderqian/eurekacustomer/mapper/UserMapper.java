@@ -32,9 +32,11 @@ public interface UserMapper {
 
     /**
      * 插入用户，返回用户id
+     * 需要注意的是在mapper接口中不能使用@Param("")绑定传入实体参数，这样主键会绑定到新建的实体中。
+     * 如@Param("user") UserEntity user主键会绑定到新建的实体，即getId() = null。
      *
      * @param user 用户实体
      * @return Long
      */
-    Long insertUser(@Param("user") UserEntity user);
+    Long insertUser(UserEntity user);
 }

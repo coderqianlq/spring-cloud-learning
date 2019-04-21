@@ -15,6 +15,7 @@ import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -56,6 +57,11 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
+    public BaseResult testRedis(String id) {
+        return BaseResultFactory.createSuccessResult(userDao.findUser(id));
+    }
+
+    @Override
     public BaseResult testPageHelper(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<UserEntity> users = userMapper.findAll();
@@ -72,6 +78,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
+    @Transactional(rollbackFor = Exception.class)
     public BaseResult addUser(String name, String birth) {
         return BaseResultFactory.createSuccessResult(userDao.insertUser(name, birth));
     }

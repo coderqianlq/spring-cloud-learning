@@ -18,4 +18,12 @@ public interface UserDao {
      * @return UserEntity
      */
     UserEntity insertUser(String name, String birth);
+
+    /**
+     * 查询用户
+     *
+     * @param id 用户编号
+     * @return UserEntity
+     */
+    UserEntity findUser(String id);
 }
