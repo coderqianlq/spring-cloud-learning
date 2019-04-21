@@ -42,6 +42,14 @@ public interface TestService {
     BaseResult testMybatis(String id);
 
     /**
+     * 测试redis接口
+     *
+     * @param id 用户id
+     * @return BaseResult
+     */
+    BaseResult testRedis(String id);
+
+    /**
      * 测试Mybatis分页插件
      *
      * @param pageNum  当前页码
@@ -57,4 +65,13 @@ public interface TestService {
      * @return BaseResult
      */
     BaseResult testMapStruct(String id);
+
+    /**
+     * 新增用户
+     *
+     * @param name  姓名
+     * @param birth 出生日期
+     * @return BaseResult
+     */
+    BaseResult addUser(String name, String birth);
 }

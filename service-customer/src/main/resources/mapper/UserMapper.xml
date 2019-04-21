@@ -24,4 +24,12 @@
             </if>
         </where>
     </select>
+
+    <insert id="insertUser" parameterType="User">
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.String">
+            select replace(uuid(), '-', '') as id from dual
+        </selectKey>
+        insert into user(id, name, birth)
+        values (#{id}, #{name}, #{birth})
+    </insert>
 </mapper>

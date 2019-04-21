@@ -87,4 +87,11 @@ public class TestController {
     public BaseResult testMapStruct(@ApiParam(value = "id", required = true) @RequestParam("id") String id) {
         return testService.testMapStruct(id);
     }
+
+    @ApiOperation(value = "测试redis缓存", notes = "插入一条用户数据")
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    public BaseResult insertUser(@ApiParam(value = "name", required = true) @RequestParam("name") String name,
+                                 @ApiParam(value = "birth", required = true) @RequestParam("birth") String birth) {
+        return testService.addUser(name, birth);
+    }
 }

@@ -5,15 +5,17 @@ import com.coderqian.eurekacustomer.common.BaseResultFactory;
 import com.coderqian.eurekacustomer.common.constant.Code;
 import com.coderqian.eurekacustomer.common.exception.BusinessException;
 import com.coderqian.eurekacustomer.converter.User2UserDtoMapper;
-import com.coderqian.eurekacustomer.model.entity.UserEntity;
-import com.coderqian.eurekacustomer.model.dto.UserDto;
+import com.coderqian.eurekacustomer.dao.UserDao;
 import com.coderqian.eurekacustomer.mapper.UserMapper;
+import com.coderqian.eurekacustomer.model.dto.UserDto;
+import com.coderqian.eurekacustomer.model.entity.UserEntity;
 import com.coderqian.eurekacustomer.service.TestService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -29,6 +31,9 @@ public class TestServiceImpl implements TestService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private UserDao userDao;
 
     @Override
     public String test(String text) {
@@ -52,6 +57,11 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
+    public BaseResult testRedis(String id) {
+        return BaseResultFactory.createSuccessResult(userDao.findUser(id));
+    }
+
+    @Override
     public BaseResult testPageHelper(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<UserEntity> users = userMapper.findAll();
@@ -65,5 +75,11 @@ public class TestServiceImpl implements TestService {
         UserEntity user = userMapper.findUserById(id);
         UserDto dto = User2UserDtoMapper.INSTANCE.user2UserDto(user);
         return BaseResultFactory.createSuccessResult(dto);
+    }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public BaseResult addUser(String name, String birth) {
+        return BaseResultFactory.createSuccessResult(userDao.insertUser(name, birth));
     }
 }
