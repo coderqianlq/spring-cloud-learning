@@ -39,4 +39,12 @@ public interface UserMapper {
      * @return Long
      */
     Long insertUser(UserEntity user);
+
+    /**
+     * 更新用户
+     *
+     * @param user 用户实体
+     * @return Long
+     */
+    Long updateUser(UserEntity user);
 }

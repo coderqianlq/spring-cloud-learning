@@ -82,4 +82,10 @@ public class TestServiceImpl implements TestService {
     public BaseResult addUser(String name, String birth) {
         return BaseResultFactory.createSuccessResult(userDao.insertUser(name, birth));
     }
+
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public BaseResult updateUser(String id, String name, String birth) {
+        return BaseResultFactory.createSuccessResult(userDao.updateUser(id, name, birth));
+    }
 }
