@@ -20,6 +20,16 @@ public interface UserDao {
     UserEntity insertUser(String name, String birth);
 
     /**
+     * 更新
+     *
+     * @param id    id
+     * @param name  姓名
+     * @param birth 出生日期
+     * @return UserEntity
+     */
+    UserEntity updateUser(String id, String name, String birth);
+
+    /**
      * 查询用户
      *
      * @param id 用户编号

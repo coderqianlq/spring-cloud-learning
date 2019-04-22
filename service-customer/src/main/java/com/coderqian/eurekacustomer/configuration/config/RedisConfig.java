@@ -60,7 +60,7 @@ public class RedisConfig extends CachingConfigurerSupport {
     }
 
     /**
-     * RedisTemplate配置，配置使用自定义的
+     * RedisTemplate配置，使用Jackson2JsonRedisSerializer作为序列化器
      */
     @SuppressWarnings({"rawtypes", "unchecked"})
     @Bean
@@ -68,7 +68,7 @@ public class RedisConfig extends CachingConfigurerSupport {
         RedisTemplate<String, String> template = new RedisTemplate<>();
         template.setConnectionFactory(factory);
 
-        //使用Jackson2JsonRedisSerializer 來序列化和反序列化redis的value值
+        // 使用Jackson2JsonRedisSerializer來序列化和反序列化redis的value值
         Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
 
         ObjectMapper objectMapper = new ObjectMapper();

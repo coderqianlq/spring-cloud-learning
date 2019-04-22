@@ -32,4 +32,21 @@
         insert into user(id, name, birth)
         values (#{id}, #{name}, #{birth})
     </insert>
+
+    <update id="updateUser" parameterType="User">
+        update user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="birth !=null and birth != ''">
+                birth = #{birth},
+            </if>
+        </trim>
+        <where>
+            <if test="id != null and id != ''">
+                 id = #{id}
+            </if>
+        </where>
+    </update>
 </mapper>

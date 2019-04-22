@@ -33,6 +33,17 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
+    @CachePut(cacheNames = "user")
+    public UserEntity updateUser(String id, String name, String birth) {
+        UserEntity user = new UserEntity();
+        user.setId(id);
+        user.setName(name);
+        user.setBirth(birth);
+        userMapper.updateUser(user);
+        return user;
+    }
+
+    @Override
     @Cacheable(cacheNames = "findUserById")
     public UserEntity findUser(String id) {
         return userMapper.findUserById(id);
