@@ -103,7 +103,7 @@ public class TestController {
 
     @ApiOperation(value = "测试redis缓存", notes = "更新一条用户数据")
     @RequestMapping(value = "/update", method = RequestMethod.POST)
-    public BaseResult updateUser(@ApiParam(value = "id", required = true) @RequestParam("id") String id,
+    public BaseResult updateUser(@ApiParam(value = "id", required = true) @RequestParam(value = "id") String id,
                                  @ApiParam(value = "name", required = true) @RequestParam(value = "name") String name,
                                  @ApiParam(value = "birth") @RequestParam(value = "birth", required = false) String birth) {
         return testService.updateUser(id, name, birth);
