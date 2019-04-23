@@ -80,12 +80,19 @@ public class TestServiceImpl implements TestService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public BaseResult addUser(String name, String birth) {
-        return BaseResultFactory.createSuccessResult(userDao.insertUser(name, birth));
+        UserEntity user = new UserEntity();
+        user.setName(name);
+        user.setBirth(birth);
+        return BaseResultFactory.createSuccessResult(userDao.insertUser(user));
     }
 
     @Override
     @Transactional(rollbackFor = Exception.class)
     public BaseResult updateUser(String id, String name, String birth) {
-        return BaseResultFactory.createSuccessResult(userDao.updateUser(id, name, birth));
+        UserEntity user = new UserEntity();
+        user.setId(id);
+        user.setName(name);
+        user.setBirth(birth);
+        return BaseResultFactory.createSuccessResult(userDao.updateUser(user));
     }
 }
