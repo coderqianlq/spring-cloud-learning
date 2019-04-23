@@ -22,23 +22,16 @@ public class UserDaoImpl implements UserDao {
     private UserMapper userMapper;
 
     @Override
-    @CachePut(cacheNames = "user")
-    public UserEntity insertUser(String name, String birth) {
-        UserEntity user = new UserEntity();
-        user.setName(name);
-        user.setBirth(birth);
+    @CachePut(cacheNames = "user", key = "#user.id")
+    public UserEntity insertUser(UserEntity user) {
         userMapper.insertUser(user);
         user.setId(user.getId());
         return user;
     }
 
     @Override
-    @CachePut(cacheNames = "user")
-    public UserEntity updateUser(String id, String name, String birth) {
-        UserEntity user = new UserEntity();
-        user.setId(id);
-        user.setName(name);
-        user.setBirth(birth);
+    @CachePut(cacheNames = "user", key = "#user.id")
+    public UserEntity updateUser(UserEntity user) {
         userMapper.updateUser(user);
         return user;
     }
