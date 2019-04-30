@@ -25,7 +25,6 @@ public class UserDaoImpl implements UserDao {
     @CachePut(cacheNames = "user", key = "#user.id")
     public UserEntity insertUser(UserEntity user) {
         userMapper.insertUser(user);
-        user.setId(user.getId());
         return user;
     }
 
