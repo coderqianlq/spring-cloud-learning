@@ -13,8 +13,8 @@ spring:
     maxWait: 60000 # 配置获取连接等待超时的时间
     filters: stat,wall # 配置监控统计拦截的filters，用于监控SQL，wall用于防火墙
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true
-    username:
-    password:
+    username: root
+    password: qlq1995/
   redis:
     database: 0 # redis数据库索引（默认为0）
     host:  127.0.0.1

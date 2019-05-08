@@ -7,6 +7,7 @@ spring:
         git:
           uri: https://github.com/coderqianlq/spring-cloud-cli/
           search-paths: config-coderqian
+          # 如果代码仓库是公开的，则不需要设置用户名和密码
           username:
           password:
 server:

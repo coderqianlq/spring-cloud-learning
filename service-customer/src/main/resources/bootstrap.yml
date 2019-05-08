@@ -3,10 +3,18 @@ spring:
     name: service-customer
   cloud:
     config:
+      # 指定分支
       label: master
+      # 指定环境
       profile: dev
       name: service-customer,service-customer-mysql,service-customer-redis
       uri: http://127.0.0.1:1201/
+    bus:
+      # 开启总线
+      enabled: true
+      trace:
+        # 打开ack跟踪的标志（默认关闭）
+        enabled: true
   profiles:
     active: dev
   zipkin:
