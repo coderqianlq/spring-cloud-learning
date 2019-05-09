@@ -7,25 +7,39 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    initialSize: 5 # 连接池启动时创建的连接数量的初始值
-    minIdle: 5 # 最小空闲值，当空闲的连接数少于阀值时，连接池就会去预申请连接
-    maxActive: 20 # 连接池的最大值，同一时间可以从连接池分配的最多连接数量
-    maxWait: 60000 # 配置获取连接等待超时的时间
-    filters: stat,wall # 配置监控统计拦截的filters，用于监控SQL，wall用于防火墙
+    # 连接池启动时创建的连接数量的初始值
+    initialSize: 5
+    # 最小空闲值，当空闲的连接数少于阀值时，连接池就会去预申请连接
+    minIdle: 5
+    # 连接池的最大值，同一时间可以从连接池分配的最多连接数量
+    maxActive: 20
+    # 配置获取连接等待超时的时间
+    maxWait: 60000
+    # 配置监控统计拦截的filters，用于监控SQL，wall用于防火墙
+    filters: stat,wall
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true
     username:
     password:
   redis:
-    database: 0 # redis数据库索引（默认为0）
+    # redis数据库索引（默认为0）
+    database: 0
     host:  127.0.0.1
-    port:  6379 # 默认端口
-    password: # redis访问密码（默认为空）
-    pool: # redis连接池配置
-       max-active: 8 # 最大可用连接数（默认为8，负数表示无限）
-       max-wait: -1 # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
-       max-idle: 8 # 最大空闲连接数（默认为8，负数表示无限）
-       min-idle: 0 # 最小空闲连接数（默认为0，该值只有为正数才有作用）
-    timeout: 0 # redis连接超时时间（单位为毫秒）
+    # 默认端口
+    port:  6379
+    # redis访问密码（默认为空）
+    password:
+    # redis连接池配置
+    pool:
+       # 最大可用连接数（默认为8，负数表示无限）
+       max-active: 8
+       # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
+       max-wait: -1
+       # 最大空闲连接数（默认为8，负数表示无限）
+       max-idle: 8
+       # 最小空闲连接数（默认为0，该值只有为正数才有作用）
+       min-idle: 0
+    # redis连接超时时间（单位为毫秒）
+    timeout: 0
 
 logging:
   config: classpath:log4j2.xml
