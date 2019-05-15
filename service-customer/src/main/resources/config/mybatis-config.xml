@@ -3,6 +3,6 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <typeAliases>
-        <typeAlias alias="User" type="com.coderqian.eurekacustomer.model.entity.UserEntity" />
+        <typeAlias alias="User" type="com.qianlq.eurekacustomer.model.entity.UserEntity" />
     </typeAliases>
 </configuration>
