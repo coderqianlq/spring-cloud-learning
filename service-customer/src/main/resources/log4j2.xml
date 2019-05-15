@@ -62,7 +62,7 @@
             /> <Logger name="org.apache.tomcat.util.net.NioSelectorPool" level="WARN"
             /> -->
         <Logger name="org.springframework" level="INFO"/>
-        <Logger name="com.coderqian" level="INFO"/>
+        <Logger name="com.qianlq" level="INFO"/>
         <Root level="all">
             <AppenderRef ref="Console"></AppenderRef>
             <AppenderRef ref="FileAll"></AppenderRef>

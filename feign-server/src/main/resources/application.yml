@@ -11,7 +11,7 @@ feign:
   hystrix:
     enabled: true
 
-# 请求处理的超时时间
-# ribbon.ReadTimeout=120000
-# 请求连接的超时时间
-# ribbon.ConnectTimeout=30000
+#turbine:
+#  app-config: service-customer
+#  combine-host-port: true
+#  cluster-name-expression: "'default'"
