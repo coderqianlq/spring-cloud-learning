@@ -17,7 +17,7 @@ public class BaseResultFactory {
      * @param data 返回数据
      * @return
      */
-    public static BaseResult createSuccessResult(Object data) {
+    public static <T> BaseResult<T> createSuccessResult(Object data) {
         return new BaseResult(Code.SUCCESS, data);
     }
 
@@ -26,7 +26,7 @@ public class BaseResultFactory {
      *
      * @return
      */
-    public static BaseResult createEmptyResult() {
-        return new BaseResult(Code.SUCCESS);
+    public static <T> BaseResult<T> createEmptyResult() {
+        return new BaseResult<>(Code.SUCCESS);
     }
 }

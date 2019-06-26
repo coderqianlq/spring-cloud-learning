@@ -46,23 +46,23 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public BaseResult testBaseResult(String text) {
+    public BaseResult<String> testBaseResult(String text) {
         log.info("日志测试：{}", text);
-        return new BaseResult(text);
+        return new BaseResult<>(text);
     }
 
     @Override
-    public BaseResult testMybatis(String id) {
+    public BaseResult<UserEntity> testMybatis(String id) {
         return BaseResultFactory.createSuccessResult(userMapper.findUserById(id));
     }
 
     @Override
-    public BaseResult testRedis(String id) {
+    public BaseResult<UserEntity> testRedis(String id) {
         return BaseResultFactory.createSuccessResult(userDao.findUser(id));
     }
 
     @Override
-    public BaseResult testPageHelper(Integer pageNum, Integer pageSize) {
+    public BaseResult<PageInfo<UserDto>> testPageHelper(Integer pageNum, Integer pageSize) {
         PageHelper.startPage(pageNum, pageSize);
         List<UserEntity> users = userMapper.findAll();
         List<UserDto> userDto = User2UserDtoMapper.INSTANCE.users2UserDtos(users);
@@ -71,7 +71,7 @@ public class TestServiceImpl implements TestService {
     }
 
     @Override
-    public BaseResult testMapStruct(String id) {
+    public BaseResult<UserDto> testMapStruct(String id) {
         UserEntity user = userMapper.findUserById(id);
         UserDto dto = User2UserDtoMapper.INSTANCE.user2UserDto(user);
         return BaseResultFactory.createSuccessResult(dto);
@@ -79,7 +79,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public BaseResult addUser(String name, String birth) {
+    public BaseResult<UserEntity> addUser(String name, String birth) {
         UserEntity user = new UserEntity();
         user.setName(name);
         user.setBirth(birth);
