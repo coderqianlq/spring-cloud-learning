@@ -38,7 +38,7 @@ public class Swagger2 {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.coderqian.eurekacustomer.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.qianlq.eurekacustomer.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .globalOperationParameters(pars)
@@ -49,7 +49,7 @@ public class Swagger2 {
         return new ApiInfoBuilder()
                 .title("service-customer")
                 .description("Demo project for Spring Boot")
-                .termsOfServiceUrl("http://com.coderqian")
+                .termsOfServiceUrl("https://www.qianlq.com")
                 .version("1.0")
                 .build();
     }

@@ -5,10 +5,11 @@ server:
   port: 8761
 eureka:
   client:
-    register-with-eureka: false #表示是否将自己注册到Eureka Server上，默认为true
-    fetch-registry: false #表示是否从Eureka Server上获取注册信息，默认为true
+    # 表示是否将自己注册到Eureka Server上，默认为true
+    register-with-eureka: false
+    # 表示是否从Eureka Server上获取注册信息，默认为true
+    fetch-registry: false
   instance:
     prefer-ip-address: true
-
-
+    instance-id: ${spring.application.name}:${server.port}
 
