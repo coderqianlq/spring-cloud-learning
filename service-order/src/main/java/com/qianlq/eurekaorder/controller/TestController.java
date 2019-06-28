@@ -1,6 +1,7 @@
 package com.qianlq.eurekaorder.controller;
 
 import com.qianlq.eurekaorder.common.message.Producer;
+import com.qianlq.eurekaorder.service.CustomerService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -25,6 +26,9 @@ import javax.annotation.Resource;
 @RequestMapping(value = "/test")
 @Api(value = "测试", description = "测试模块", position = 1)
 public class TestController {
+
+    @Autowired
+    private CustomerService customerService;
 
     @Bean
     @LoadBalanced
@@ -54,5 +58,11 @@ public class TestController {
     @RequestMapping(value = "/stream", method = RequestMethod.GET)
     public void testStream(@ApiParam(value = "message") @RequestParam(value = "message") String message) {
         producer.produce(message);
+    }
+
+    @ApiOperation(value = "测试服务间调用", notes = "测试服务间调用")
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    public String testCustomerService(@RequestParam(value = "text") String text) {
+        return customerService.testCustomer(text);
     }
 }

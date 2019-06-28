@@ -1,12 +1,10 @@
 spring:
   application:
     name: api-gateway
-
-#zuul.routes.api-a.path=/customer/**
-#zuul.routes.api-a.serviceId=service-customer
-
-#zuul.routes.api-b.path=/order/**
-#zuul.routes.api-b.serviceId=service-order
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: true
 
 server:
   port: 9090
@@ -18,7 +16,16 @@ zuul:
   # 禁止服务自动添加
   ignored-services: '*'
   routes:
-    api-c:
-      path: /feign/**
-      # 由网关分发到feign，再经feign负载均衡
-      service-id: feign-server
+    api-a:
+      path: /customer/**
+      service-id: service-customer
+    api-b:
+      path: /order/**
+      service-id: service-order
+  # 开启重试功能
+  retryable: true
+#    # 在zuul和服务间增加feign只会增加通讯消耗，并不推荐
+#    api-c:
+#      path: /feign/**
+#      # 由网关分发到feign，再经feign负载均衡
+#      service-id: feign-server
