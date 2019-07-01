@@ -49,4 +49,8 @@
             </if>
         </where>
     </update>
+
+    <delete id="deleteUser" parameterType="java.lang.String">
+        delete from user where id = #{id}
+    </delete>
 </mapper>

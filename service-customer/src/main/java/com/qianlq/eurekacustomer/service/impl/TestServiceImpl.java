@@ -88,7 +88,7 @@ public class TestServiceImpl implements TestService {
 
     @Override
     @Transactional(rollbackFor = Exception.class)
-    public BaseResult updateUser(String id, String name, String birth) {
+    public BaseResult<UserEntity> updateUser(String id, String name, String birth) {
         UserEntity user = new UserEntity();
         user.setId(id);
         user.setName(name);

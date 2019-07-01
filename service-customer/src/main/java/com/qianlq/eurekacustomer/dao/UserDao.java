@@ -33,4 +33,12 @@ public interface UserDao {
      * @return UserEntity
      */
     UserEntity findUser(String id);
+
+    /**
+     * 删除用户
+     *
+     * @param id 用户编号
+     * @return UserEntity
+     */
+    UserEntity deleteUser(String id);
 }
