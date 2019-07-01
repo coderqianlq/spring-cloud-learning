@@ -47,4 +47,12 @@ public interface UserMapper {
      * @return Long
      */
     Long updateUser(UserEntity user);
+
+    /**
+     * 删除用户(推荐逻辑删除)
+     *
+     * @param id 用户id
+     * @return Long
+     */
+    UserEntity deleteUser(@Param("id") String id);
 }
