@@ -90,7 +90,7 @@ public class TestServiceImpl implements TestService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public BaseResult<UserEntity> updateUser(String id, String name, String birth) {
-        //判断用户id是否为空，防止Mybatis执行全表update
+        //判断用户id是否为空，防止mybatis执行全表update
         if (StringUtils.isEmpty(id)) {
             //throw new BusinessException(-1, "用户id为空");
             throw new BusinessException(Code.PARAM_NULL);
