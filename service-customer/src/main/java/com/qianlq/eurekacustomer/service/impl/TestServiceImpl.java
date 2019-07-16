@@ -16,6 +16,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.util.StringUtils;
 
 import java.util.List;
 
@@ -89,6 +90,11 @@ public class TestServiceImpl implements TestService {
     @Override
     @Transactional(rollbackFor = Exception.class)
     public BaseResult<UserEntity> updateUser(String id, String name, String birth) {
+        //判断用户id是否为空，防止mybatis执行全表update
+        if (StringUtils.isEmpty(id)) {
+            //throw new BusinessException(-1, "用户id为空");
+            throw new BusinessException(Code.PARAM_NULL);
+        }
         UserEntity user = new UserEntity();
         user.setId(id);
         user.setName(name);

@@ -15,6 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public final class BusinessException extends BaseException {
 
+    private static final long serialVersionUID = -6962189687050481038L;
+
     public BusinessException(Code code) {
         super(code.getCode(), code.getMsg());
     }
