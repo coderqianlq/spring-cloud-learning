@@ -23,6 +23,7 @@
               id = #{id}
             </if>
         </where>
+        limit 1
     </select>
 
     <insert id="insertUser" parameterType="User">
@@ -39,7 +40,7 @@
             <if test="name != null and name != ''">
                 name = #{name},
             </if>
-            <if test="birth !=null and birth != ''">
+            <if test="birth != null and birth != ''">
                 birth = #{birth},
             </if>
         </trim>
