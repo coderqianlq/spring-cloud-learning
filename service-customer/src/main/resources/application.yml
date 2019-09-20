@@ -7,19 +7,20 @@ spring:
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     driver-class-name: com.mysql.jdbc.Driver
-    # 连接池启动时创建的连接数量的初始值
-    initialSize: 5
-    # 最小空闲值，当空闲的连接数少于阀值时，连接池就会去预申请连接
-    minIdle: 5
-    # 连接池的最大值，同一时间可以从连接池分配的最多连接数量
-    maxActive: 20
-    # 配置获取连接等待超时的时间
-    maxWait: 60000
-    # 配置监控统计拦截的filters，用于监控SQL，wall用于防火墙
-    filters: stat,wall
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true
     username:
     password:
+    druid:
+      # 连接池启动时创建的连接数量的初始值
+      initial-size: 5
+      # 连接池的最大值，同一时间可以从连接池分配的最多连接数量
+      max-active: 20
+      # 配置获取连接等待超时的时间
+      max-wait: 60000
+      # 最小空闲值，当空闲的连接数少于阀值时，连接池就会去预申请连接
+      min-idle: 5
+      # 配置监控统计拦截的filters，用于监控SQL，wall用于防火墙
+      filters: stat,wall
   redis:
     # redis数据库索引（默认为0）
     database: 0

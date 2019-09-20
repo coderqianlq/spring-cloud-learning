@@ -32,19 +32,19 @@ public class DruidDBConfig {
     @Value("${spring.datasource.driver-class-name}")
     private String driverClassName;
 
-    @Value("${spring.datasource.initialSize}")
+    @Value("${spring.datasource.druid.initial-size}")
     private int initialSize;
 
-    @Value("${spring.datasource.minIdle}")
+    @Value("${spring.datasource.druid.min-idle}")
     private int minIdle;
 
-    @Value("${spring.datasource.maxActive}")
+    @Value("${spring.datasource.druid.max-active}")
     private int maxActive;
 
-    @Value("${spring.datasource.maxWait}")
+    @Value("${spring.datasource.druid.max-wait}")
     private int maxWait;
 
-    @Value("${spring.datasource.filters}")
+    @Value("${spring.datasource.druid.filters}")
     private String filters;
 
     @Bean
