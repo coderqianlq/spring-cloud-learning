@@ -1,5 +1,5 @@
 FROM frolvlad/alpine-oraclejdk8:slim
 VOLUME /tmp
-ADD api-gateway-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+ADD api-gateway-1.3.0-SNAPSHOT.jar api-gateway.jar
+ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/api-gateway.jar"]
 EXPOSE 9090

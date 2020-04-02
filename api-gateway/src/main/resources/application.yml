@@ -1,3 +1,6 @@
+server:
+  port: 9090
+
 spring:
   application:
     name: api-gateway
@@ -6,12 +9,16 @@ spring:
       retry:
         enabled: true
 
-server:
-  port: 9090
 eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
   client:
-    service-url:
-      default-zone: http://127.0.0.1:8761/eureka
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+
 zuul:
   # 禁止服务自动添加
   ignored-services: '*'
@@ -20,8 +27,8 @@ zuul:
       path: /customer/**
       service-id: service-customer
     api-b:
-      path: /order/**
-      service-id: service-order
+      path: /producer/**
+      service-id: service-producer
   # 开启重试功能
   retryable: true
 #    # 在zuul和服务间增加feign只会增加通讯消耗，并不推荐

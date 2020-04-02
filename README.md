@@ -1,146 +1,140 @@
 ## Spring-Cloud-Learning 
 
-  [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-cli)
-  [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-cli)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE)
 
+## Contents
 
-## 快速开始
+* [Usage](#usage)
+* [Components](#components)
+* [Modules](#modules)
+* [Releases](#releases)
+* [Todo](#todo)
+* [Links](#links)
+* [Collaborators](#collaborators)
+* [License](#license)
 
-Spring Cloud是一个基于Spring Boot实现的云应用开发工具，它为基于JVM的云应用开发中涉及的配置管理、服务发现、断路器、智能路由、微代理、控制总线、全局锁、决策竞选、分布式会话和集群状态管理等操作提供了一种简单的开发方式。
+## Usage
 
-Spring Cloud 全家桶：
+Two methods will mainly introduced, but no matter what you need to clone the code.
 
-<center>
-    <table width="800">
-	<tr><td width="300">服务注册中心</td><td width="500">Spring Cloud Netflix Eureka</td></tr>
-	<tr><td width="300">服务网关</td><td width="500">Spring Cloud Netflix Zuul</td></tr>
-        <tr><td width="300">断路器</td><td width="500">Spring Cloud Netflix Hystrix</td></tr>
-        <tr><td width="300">分布式配置</td><td width="500">Spring Cloud Config</td></tr>
-        <tr><td width="300">服务跟踪</td><td width="500">Spring Cloud Sleuth</td></tr>
-	<tr><td width="300">消息总线</td><td width="500">Spring Cloud Bus</td></tr>
-	<tr><td width="300">数据流</td><td width="500">Spring Cloud Stream</td></tr>
-	<tr><td width="300">批量任务</td><td width="500">Spring Cloud Task</td></tr>
-    </table>
-</center>
-
-### 创建服务注册中心
-
-创建Spring boot项目，命名为eureka-server，并在pom.xml中引入需要的依赖内容：
-```xml
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.9.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
-</parent>
-
-<!-- 引入Eureka服务包-->
-<dependencies>
-    <dependency>
-	<groupId>org.springframework.cloud</groupId>
-	<artifactId>spring-cloud-starter-eureka-server</artifactId>
-    </dependency>
-</dependencies>
-
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Dalston.RELEASE</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
+```
+$ git clone https://github.com/coderqianlq/spring-cloud-learning.git
 ```
 
-通过@EnableEurekaServer注解启动一个服务注册中心提供给其他应用进行对话。在Spring Boot启动类加上这个注解即可，如下：
-```java
-@SpringBootApplication
-@EnableEurekaServer
-public class EurekaServerApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(EurekaServerApplication.class, args);
-    }
-}
+### Use directly
+
+You can use idea to import the project with maven, and use idea or use command line to start project.
+
+```
+$ mvn spring-boot:run
 ```
 
-在默认设置下，该服务注册中心也会将自己作为客户端来尝试注册它自己，所以我们需要禁用它的客户端注册行为，只需要在application.properties配置文件中增加如下信息：
-```properties
-spring.application.name=eureka-server
-server.port=8761
-eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
-#表示是否将自己注册到Eureka Server上，默认为true
-eureka.client.registerWithEureka=false
-#表示是否从Eureka Server上获取注册信息，默认为true
-eureka.client.fetchRegistry=false
+You can also type the jar package and run it.
+
+```
+$ java -jar xxx.jar
 ```
 
-启动工程，访问 http://localhost:8761/ 。
+### Use docker
 
-### 创建服务提供方
+First, you have to make sure you have installed docker.
 
-下面我们创建提供服务的客户端，并向服务注册中心注册自己。本文我们主要介绍服务的注册与发现，所以我们不妨在服务提供方中尝试着提供一个接口来获取当前所有的服务信息。
-
-首先，创建一个基本的Spring Boot应用。命名为eureka-order，在pom.xml中，加入如下配置：
-```xml
-<parent>
-    <groupId>org.springframework.boot</groupId>
-    <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.9.RELEASE</version>
-    <relativePath/> <!-- lookup parent from repository -->
-</parent>
-
-<dependencies>
-    <dependency>
-        <groupId>org.springframework.cloud</groupId>
-        <artifactId>spring-cloud-starter-eureka</artifactId>
-    </dependency>
-    <dependency>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-web</artifactId>
-    </dependency>
-</dependencies>
-
-<dependencyManagement>
-    <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-dependencies</artifactId>
-            <version>Dalston.RELEASE</version>
-            <type>pom</type>
-            <scope>import</scope>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
+```
+$ docker version
+Docker version 18.06.1-ce, build e68fc7a
 ```
 
-在应用启动类中通过加上@EnableEurekaClient（该注解上有@EnableDiscoveryClient）注解，该注解能激活Eureka中的DiscoveryClient实现，这样才能实现Controller中对服务信息的输出。
-```java
-@SpringBootApplication
-@EnableEurekaClient
-public class EurekaOrderApplication {
-    public static void main(String[] args) {
-        SpringApplication.run(EurekaOrderApplication.class, args);
-    }
-}
+Then, you need to enter each sub module and execute the docker building command.
+
+```
+$ cd eureka-server
+
+$ mvn clean package docker:build
 ```
 
-我们在完成以上工作后，再继续对eureka-order的application.properties做一些配置工作，具体如下：
-```properties
-spring.application.name=eureka-order
-server.port=8100
-eureka.client.service-url.defaultZone=http://127.0.0.1:8761/eureka
+Next, return to the parent module and execute docker-compose command.
+
+```
+$ docker-compose up -d
 ```
 
-通过spring.application.name属性，我们可以指定微服务的名称后续在调用的时候只需要使用该名称就可以进行服务的访问。eureka.client.serviceUrl.defaultZone属性对应服务注册中心的配置内容，指定服务注册中心的位置。为了在本机上测试区分服务提供方和服务注册中心，使用server.port属性设置不同的端口。
+Finally, you can open the registration center(default url: http://localhost:8761) to see if the service is registered successfully.
 
-同时启动两个服务，再访问 http://localhost:8761/ 。
+## Components
 
-## 友情链接
+- [x] Eureka
+- [x] Consul
+- [ ] Ribbon
+- [x] Feign
+- [ ] Hystrix
+- [ ] Turbine
+- [x] Zuul
+- [x] Spring Cloud Config
+- [x] Spring Cloud Stream
+- [x] Spring Cloud Bus
+- [ ] Spring Cloud Sleuth
+- [ ] Spring Cloud Security
+- [ ] Spring Cloud Task
 
-Spring Cloud其它组件的搭建教程可参考[我的博客](https://blog.csdn.net/weixin_36759405)。
+To be supplemented...
+
+## Modules
+
+|      -           |     port     |     remarks     |
+| :-------------   | :----------: | :-------------: |
+| api-gateway      |     9090     |                 |
+| config-server    |     8504     | if you change the port, you need also modify bootstrap.yml of service-customer. |
+| consul-server    |     8502     |                 |
+| eureka-server    |     8761     |                 |
+| feign-server     |     8765     | The simple use of Hystrix is in this module. |
+| service-customer |     8200     | Integrated multiple components, including Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus |
+| service-producer |     8100     |                 |
+| zipkin-server    |     9411     | if you change the port, you need also modify bootstrap.yml of service-customer. |
+
+## Releases
+
+| Spring Boot | Spring Cloud | Swagger2 |
+| :---------: | :----------: | :------: |
+|    1.5.9    |    Dalston   |   2.7.0  |
+
+## Todo
+
+- [ ] Split the module of service-customer.
+- [ ] Add the detailed usage of hystrix with turbine.
+- [ ] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
+
+## Collaborators
+
+<!-- https://github.com/all-contributors/all-contributors -->
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Marveliu">
+      <img src="https://avatars3.githubusercontent.com/u/15508722?v=4" width="100"/>
+      <br />
+      <sub><b>Marveliu</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Joby1230">
+      <img src="https://avatars3.githubusercontent.com/u/23372369?v=4" width="100"/>
+      <br />
+      <sub><b>Joby1230</b></sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/wxaaaa">
+      <img src="https://avatars3.githubusercontent.com/u/19554712?&v=4" width="100"/>
+      <br />
+      <sub><b>wxaaaa</b></sub>
+      </a>
+    </td>
+  </tr>
+</table>  
+
+## Links
+[Léon's Notes](https://www.qianlq.com/)
 
 ## License
 [MIT](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE) © CoderQian

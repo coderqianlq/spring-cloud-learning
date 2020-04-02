@@ -1,6 +1,11 @@
+server:
+  port: 8200
+
 spring:
   application:
     name: service-customer
+  aop:
+    proxy-target-class: true
   cloud:
     config:
       # 指定分支
@@ -8,13 +13,21 @@ spring:
       # 指定环境
       profile: dev
       name: service-customer,service-customer-mysql,service-customer-redis
-      uri: http://127.0.0.1:1201/
+      uri: http://127.0.0.1:8504/
     bus:
       # 开启总线
       enabled: true
       trace:
         # 打开ack跟踪的标志（默认关闭）
         enabled: true
+    stream:
+      bindings:
+        producer:
+          destination: exchange
+          exchangeType: topic
+        consumer:
+          destination: exchange
+          group: consumer-test
   profiles:
     active: dev
   zipkin:
@@ -25,12 +38,6 @@ spring:
     username: guest
     password: guest
 
-server:
-  port: 8200
-
 management:
   security:
     enabled: false
-
-
-

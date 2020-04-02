@@ -1,15 +1,25 @@
+server:
+  port: 8761
+  context-path: /
+
 spring:
   application:
     name: eureka-server
-server:
-  port: 8761
+
 eureka:
-  client:
-    # 表示是否将自己注册到Eureka Server上，默认为true
-    register-with-eureka: false
-    # 表示是否从Eureka Server上获取注册信息，默认为true
-    fetch-registry: false
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
+    hostname: localhost
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 30
+  client:
+    # 表示是否将自己注册到Eureka Server上，默认为true
+    registerWithEureka: false
+    # 表示是否从Eureka Server上获取注册信息，默认为true
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/
+  server:
+    enable-self-preservation: false
 

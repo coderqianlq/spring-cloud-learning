@@ -1,16 +1,46 @@
-version: '3'
+version: '3.1'
 services:
+  # 注册中心
   eureka-server:
     image: qianlq/eureka-server
+    container_name: eureka-server
+    hostname: eureka-server
     restart: always
     ports:
       - 8761:8761
-    hostname: eureka-server
-
+  # 服务网关
   api-gateway:
     image: qianlq/api-gateway
+    container_name: api-gateway
     restart: always
     ports:
       - 9090:9090
+    links:
+      - eureka-server
+  # 配置中心
+  config-server:
+    image: qianlq/config-server
+    container_name: config-server
+    restart: always
+    ports:
+      - 8504:8504
+    links:
+      - eureka-server
+
+  service-producer:
+    image: qianlq/service-producer-core
+    container_name: service-producer
+    restart: always
+    ports:
+      - 8100:8100
+    links:
+      - eureka-server
+
+  service-customer:
+    image: qianlq/service-customer
+    container_name: service-customer
+    restart: always
+    ports:
+      - 8200:8200
     links:
       - eureka-server

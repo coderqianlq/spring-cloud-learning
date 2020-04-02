@@ -1,3 +1,11 @@
+server:
+  port: 8504
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://127.0.0.1:8761/eureka
+
 spring:
   application:
     name: config-server
@@ -5,10 +13,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/coderqianlq/spring-cloud-cli/
+          uri: https://github.com/coderqianlq/spring-cloud-learning/
           search-paths: config-coderqian
           # 如果代码仓库是公开的，则不需要设置用户名和密码
-          username:
-          password:
-server:
-  port: 1201
+          username: 1242202279@qq.com
+          password: Qlq1995/
