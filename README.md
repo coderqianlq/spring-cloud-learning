@@ -1,6 +1,6 @@
 ## Spring-Cloud-Learning 
 
-[![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-cli)
+[![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE)
 
 ## Contents
