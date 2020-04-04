@@ -6,6 +6,8 @@
 ## Contents
 
 * [Usage](#usage)
+  * [Use directly](#use-directly)
+  * [Use docker](#use-docker)
 * [Components](#components)
 * [Modules](#modules)
 * [Releases](#releases)
@@ -24,13 +26,13 @@ $ git clone https://github.com/coderqianlq/spring-cloud-learning.git
 
 ### Use directly
 
-You can use idea to import the project with maven, and use idea or use command line to start project.
+You can use ide to import the project with maven, and use ide or use command line to start project.
 
 ```
 $ mvn spring-boot:run
 ```
 
-You can also type the jar package and run it.
+You can also package the code and run it.
 
 ```
 $ java -jar xxx.jar
