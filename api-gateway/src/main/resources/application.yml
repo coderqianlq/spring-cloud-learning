@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: api-gateway
+  profiles:
+    active: @profiles.active@
   cloud:
     loadbalancer:
       retry:
@@ -11,13 +13,9 @@ spring:
 
 eureka:
   instance:
-    hostname: localhost
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
     prefer-ip-address: true
-  client:
-    registerWithEureka: true
-    fetchRegistry: true
-    serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
 
 zuul:
   # 禁止服务自动添加

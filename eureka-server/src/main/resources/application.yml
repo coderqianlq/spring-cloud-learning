@@ -5,21 +5,21 @@ server:
 spring:
   application:
     name: eureka-server
+  profiles:
+    # 不加单引号会报错
+    active: '@profiles.active@'
 
 eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
-    hostname: localhost
-    lease-expiration-duration-in-seconds: 30
-    lease-renewal-interval-in-seconds: 30
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 10
   client:
     # 表示是否将自己注册到Eureka Server上，默认为true
-    registerWithEureka: false
+    register-with-eureka: false
     # 表示是否从Eureka Server上获取注册信息，默认为true
-    fetchRegistry: false
-    serviceUrl:
-      defaultZone: http://eureka-server:8761/eureka/
+    fetch-registry: false
   server:
-    enable-self-preservation: false
+    enable-self-preservation: true
 

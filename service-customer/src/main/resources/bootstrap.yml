@@ -4,6 +4,8 @@ server:
 spring:
   application:
     name: service-customer
+  profiles:
+    active: @profiles.active@
   aop:
     proxy-target-class: true
   cloud:
@@ -11,7 +13,7 @@ spring:
       # 指定分支
       label: master
       # 指定环境
-      profile: dev
+      profile: @profiles.active@
       name: service-customer,service-customer-mysql,service-customer-redis
       uri: http://127.0.0.1:8504/
     bus:
@@ -28,8 +30,6 @@ spring:
         consumer:
           destination: exchange
           group: consumer-test
-  profiles:
-    active: dev
   zipkin:
     base-url: http://127.0.0.1:9411
   rabbitmq:

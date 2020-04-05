@@ -41,10 +41,10 @@ $ java -jar xxx.jar
 
 ### Use docker
 
-First, you have to make sure you have installed docker.
+First, you have to make sure you have installed docker and start docker server.
 
 ```
-$ docker version
+$ docker --version
 Docker version 18.06.1-ce, build e68fc7a
 ```
 
@@ -53,7 +53,7 @@ Then, you need to enter each sub module and execute the docker building command.
 ```
 $ cd eureka-server
 
-$ mvn clean package docker:build
+$ mvn clean package -Pdocker docker:build
 ```
 
 Next, return to the parent module and execute docker-compose command.
@@ -114,21 +114,21 @@ To be supplemented...
   <tr>
     <td align="center">
       <a href="https://github.com/Marveliu">
-      <img src="https://avatars3.githubusercontent.com/u/15508722?v=4" width="100"/>
+      <img src="https://avatars3.githubusercontent.com/u/15508722?v=4" width="100" alt=""/>
       <br />
       <sub><b>Marveliu</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/Joby1230">
-      <img src="https://avatars3.githubusercontent.com/u/23372369?v=4" width="100"/>
+      <img src="https://avatars3.githubusercontent.com/u/23372369?v=4" width="100" alt=""/>
       <br />
       <sub><b>Joby1230</b></sub>
       </a>
     </td>
     <td align="center">
       <a href="https://github.com/wxaaaa">
-      <img src="https://avatars3.githubusercontent.com/u/19554712?&v=4" width="100"/>
+      <img src="https://avatars3.githubusercontent.com/u/19554712?&v=4" width="100" alt=""/>
       <br />
       <sub><b>wxaaaa</b></sub>
       </a>
