@@ -96,12 +96,28 @@
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${jacoco.version}</version>
+                <configuration>
+                    <skip>false</skip>
+                    <destFile>target/coverage-reports/jacoco.exec</destFile>
+                    <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                </configuration>
                 <executions>
                     <execution>
-                        <id>prepare-agent</id>
+                        <id>jacoco-agent</id>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
+                    </execution>
+                    <execution>
+                        <id>jacoco-report</id>
+                        <phase>test</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                        <configuration>
+                            <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                            <outputDirectory>target/coverage-reports</outputDirectory>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
