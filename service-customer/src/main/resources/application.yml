@@ -18,8 +18,8 @@ spring:
     # 配置监控统计拦截的filters，用于监控SQL，wall用于防火墙
     filters: stat,wall
     url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=utf8&verifyServerCertificate=false&useSSL=false&useOldAliasMetadataBehavior=true
-    username: root
-    password: qlq1995/
+    username:
+    password:
   redis:
     # redis数据库索引（默认为0）
     database: 0

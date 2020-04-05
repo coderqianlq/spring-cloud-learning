@@ -1,6 +1,6 @@
 package com.qianlq.customer.service;
 
-import com.qianlq.customer.mapper.UserMapper;
+import com.qianlq.customer.common.exception.BusinessException;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -19,10 +19,15 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class TestServiceTest {
 
     @Autowired
-    private UserMapper userMapper;
+    private TestService testService;
 
     @Test
     public void test() {
-        Assert.assertNotNull(userMapper.findUserById("1"));
+        Assert.assertEquals(testService.test("hello"), "hello");
+    }
+
+    @Test(expected = BusinessException.class)
+    public void testException() {
+        testService.testException("test exception");
     }
 }
