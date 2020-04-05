@@ -16,5 +16,5 @@ spring:
           uri: https://github.com/coderqianlq/spring-cloud-learning/
           search-paths: config-coderqian
           # 如果代码仓库是公开的，则不需要设置用户名和密码
-          username: 1242202279@qq.com
-          password: Qlq1995/
+          username:
+          password:

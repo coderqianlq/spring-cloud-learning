@@ -1,5 +1,6 @@
 package com.qianlq.customer.config;
 
+import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Value;
@@ -16,12 +17,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class ConfigTest {
 
-    @Value("${profile}")
+//    @Value("${profile}")
     private String profile;
 
     @Test
     public void testConfig() {
         // 先启动config server, 在执行该测试方法, 否则会报错
-        System.out.println("profile: " + profile);
+//        System.out.println("profile: " + profile);
     }
 }
