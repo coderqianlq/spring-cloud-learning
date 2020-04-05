@@ -24,6 +24,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
+        <coveralls.version>4.3.0</coveralls.version>
+        <jacoco.version>0.8.5</jacoco.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
         <spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
         <docker.image.prefix>qianlq</docker.image.prefix>
@@ -89,6 +91,24 @@
                         </resource>
                     </resources>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>${jacoco.version}</version>
+                <executions>
+                    <execution>
+                        <id>prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.eluder.coveralls</groupId>
+                <artifactId>coveralls-maven-plugin</artifactId>
+                <version>${coveralls.version}</version>
             </plugin>
         </plugins>
     </build>

@@ -1,9 +1,15 @@
 language: java
 
-install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true
-script: mvn -DskipTests=true clean install
-
+jdk:
+  - oraclejdk8
 
 branches:
   only:
     - master
+
+install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true
+script: mvn -DskipTests=true clean install
+
+after_success:
+  - mvn clean test org.jacoco:jacoco-maven-plugin:prepare-agent install org.jacoco:jacoco-maven-plugin:report
+  - mvn org.eluder.coveralls:coveralls-maven-plugin:report -DrepoToken="${RepoToken}"
