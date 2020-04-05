@@ -15,7 +15,7 @@ import java.util.List;
  * email: qianlq0824@gmail.com
  */
 
-@Mapper(componentModel = "spring")
+//@Mapper(componentModel = "spring")
 public interface User2UserDtoMapper {
 
     User2UserDtoMapper INSTANCE = Mappers.getMapper(User2UserDtoMapper.class);

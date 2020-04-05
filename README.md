@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE)
+[![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg)](https://coveralls.io/github/coderqianlq/spring-cloud-learning)
 
 ## Contents
 
