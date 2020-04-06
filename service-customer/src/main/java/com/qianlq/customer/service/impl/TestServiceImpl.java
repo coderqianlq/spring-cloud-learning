@@ -65,7 +65,7 @@ public class TestServiceImpl implements TestService {
     @Override
     public BaseResult<String> testBaseResult(String text) {
         logger.info("日志测试：{}", text);
-        return new BaseResult<>(text);
+        return new BaseResult<>(Code.SUCCESS, text);
     }
 
     @Override

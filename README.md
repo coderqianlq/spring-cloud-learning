@@ -1,23 +1,23 @@
 ## Spring-Cloud-Learning 
 
 [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg)](https://coveralls.io/github/coderqianlq/spring-cloud-learning)
 
 ## Contents
 
-* [Usage](#usage)
-  * [Use directly](#use-directly)
+* [Getting Started](#getting-started)
+  * [Use directly (recommend)](#use-directly-(recommend))
   * [Use docker](#use-docker)
 * [Components](#components)
 * [Modules](#modules)
 * [Releases](#releases)
 * [Todo](#todo)
-* [Links](#links)
 * [Collaborators](#collaborators)
+* [Links](#links)
 * [License](#license)
 
-## Usage
+## Getting Started
 
 Two methods will mainly introduced, but no matter what you need to clone the code.
 
@@ -25,7 +25,7 @@ Two methods will mainly introduced, but no matter what you need to clone the cod
 $ git clone https://github.com/coderqianlq/spring-cloud-learning.git
 ```
 
-### Use directly
+### Use directly (recommend)
 
 You can use ide to import the project with maven, and use ide or use command line to start project.
 
@@ -106,6 +106,7 @@ To be supplemented...
 - [ ] Split the module of service-customer.
 - [ ] Add the detailed usage of hystrix with turbine.
 - [ ] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
+- [ ] Add Spring Boot admin dashboard.
 
 ## Collaborators
 
@@ -140,4 +141,4 @@ To be supplemented...
 [Léon's Notes](https://www.qianlq.com/)
 
 ## License
-[MIT](https://github.com/coderqianlq/spring-cloud-learning/blob/master/LICENSE) © CoderQian
+[MIT](LICENSE) © CoderQian

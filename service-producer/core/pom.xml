@@ -22,9 +22,9 @@
 
     <profiles>
         <profile>
-            <id>local</id>
+            <id>native</id>
             <properties>
-                <profiles.active>local</profiles.active>
+                <profiles.active>native</profiles.active>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>

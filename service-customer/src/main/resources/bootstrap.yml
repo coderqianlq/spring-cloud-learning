@@ -9,13 +9,13 @@ spring:
   aop:
     proxy-target-class: true
   cloud:
+    # 根据需要移动到profile
     config:
       # 指定分支
       label: master
       # 指定环境
       profile: @profiles.active@
       name: service-customer,service-customer-mysql,service-customer-redis
-      uri: http://127.0.0.1:8504/
     bus:
       # 开启总线
       enabled: true

@@ -29,9 +29,9 @@
 
     <profiles>
         <profile>
-            <id>local</id>
+            <id>native</id>
             <properties>
-                <profiles.active>local</profiles.active>
+                <profiles.active>native</profiles.active>
             </properties>
             <activation>
                 <activeByDefault>true</activeByDefault>
@@ -225,11 +225,13 @@
                 <filtering>true</filtering>
                 <directory>${basedir}/src/main/resources</directory>
                 <includes>
-                    <include>application.yml</include>
                     <include>bootstrap.yml</include>
+                    <include>application.yml</include>
+                    <include>bootstrap-${profiles.active}.yml</include>
                     <include>application-${profiles.active}.yml</include>
                     <include>config/*.xml</include>
                     <include>mapper/*.xml</include>
+                    <include>log4j2.xml</include>
                     <include>banner.txt</include>
                 </includes>
             </resource>

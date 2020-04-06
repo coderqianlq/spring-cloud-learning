@@ -21,6 +21,7 @@ services:
   config-server:
     image: qianlq/config-server
     container_name: config-server
+    hostname: config-server
     restart: always
     ports:
       - 8504:8504
@@ -39,8 +40,8 @@ services:
   service-customer:
     image: qianlq/service-customer
     container_name: service-customer
-    restart: always
     ports:
       - 8200:8200
     links:
       - eureka-server
+      - config-server

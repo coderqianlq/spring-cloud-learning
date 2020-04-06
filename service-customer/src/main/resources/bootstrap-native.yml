@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      uri: http://localhost:8504/

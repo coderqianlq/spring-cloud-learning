@@ -8,6 +8,7 @@ import com.qianlq.customer.service.TestService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,13 +29,13 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "test-controller", tags = {"测试模块"})
 public class TestController {
 
-    //    @Value("${profile}")
+    @Value("${profile}")
     private String profile;
 
-    //    @Value("${mysql}")
+    @Value("${mysql}")
     private String mysql;
 
-    //    @Value("${redis}")
+    @Value("${redis}")
     private String redis;
 
     private TestService testService;

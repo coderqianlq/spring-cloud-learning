@@ -21,5 +21,6 @@ eureka:
     # 表示是否从Eureka Server上获取注册信息，默认为true
     fetch-registry: false
   server:
+    # 自我保护机制
     enable-self-preservation: true
 
