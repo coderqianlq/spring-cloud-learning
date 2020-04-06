@@ -7,7 +7,7 @@
 ## Contents
 
 * [Getting Started](#getting-started)
-  * [Use directly (recommend)](#use-directly-(recommend))
+  * [Use directly (recommend)](#use-directly-recommend)
   * [Use docker](#use-docker)
 * [Components](#components)
 * [Modules](#modules)
