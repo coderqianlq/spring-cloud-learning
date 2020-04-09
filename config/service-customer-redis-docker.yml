@@ -1,1 +1,1 @@
-redis=redis-docker
+redis: redis-docker

@@ -1,1 +1,1 @@
-mysql=mysql-docker
+mysql: mysql-docker
