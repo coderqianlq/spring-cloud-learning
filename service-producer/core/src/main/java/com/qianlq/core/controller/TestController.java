@@ -1,7 +1,7 @@
 package com.qianlq.core.controller;
 
-import com.qianlq.api.v2.api.TestApi;
 import com.qianlq.core.service.TestService;
+import com.qianlq.support.client.TestClient;
 import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class TestController implements TestApi {
+public class TestController implements TestClient {
 
     private TestService testService;
 

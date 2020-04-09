@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 /**
  * @author CoderQian
@@ -51,7 +52,7 @@ public class CustomerFallback implements ZuulFallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream(("The " + SERVICE_CUSTOMER + " is unavailable.").getBytes());
+                return new ByteArrayInputStream(("The " + SERVICE_CUSTOMER + " is unavailable.").getBytes(StandardCharsets.UTF_8));
             }
 
             @Override

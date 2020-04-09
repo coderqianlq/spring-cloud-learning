@@ -38,6 +38,10 @@ spring:
     username: guest
     password: guest
 
+feign:
+  hystrix:
+    enabled: true
+
 management:
   security:
     enabled: false

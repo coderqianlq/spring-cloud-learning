@@ -16,10 +16,10 @@ import java.io.StringWriter;
 
 public class LogUtils {
 
-    public static Log errorlog = LogFactory.getLog("error");
-    public static Log warnlog = LogFactory.getLog("warn");
-    public static Log infolog = LogFactory.getLog("info");
-    public static Log debuglog = LogFactory.getLog("debug");
+    public static final Log errorlog = LogFactory.getLog("error");
+    public static final Log warnlog = LogFactory.getLog("warn");
+    public static final Log infolog = LogFactory.getLog("info");
+    public static final Log debuglog = LogFactory.getLog("debug");
 
     public LogUtils() {
     }

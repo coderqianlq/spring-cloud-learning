@@ -18,6 +18,8 @@
         <module>feign-server</module>
         <module>zipkin-server</module>
         <module>consul-server</module> <!-- consul 注册中心 -->
+        <module>hystrix-dashboard</module>
+        <module>turbine-server</module>
     </modules>
 
     <properties>
@@ -98,8 +100,8 @@
                 <version>${jacoco.version}</version>
                 <configuration>
                     <skip>false</skip>
-                    <destFile>target/coverage-reports/jacoco.exec</destFile>
-                    <dataFile>target/coverage-reports/jacoco.exec</dataFile>
+                    <destFile>${project.build.directory}/coverage-reports/jacoco.exec</destFile>
+                    <dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
                 </configuration>
                 <executions>
                     <execution>
@@ -115,8 +117,8 @@
                             <goal>report</goal>
                         </goals>
                         <configuration>
-                            <dataFile>target/coverage-reports/jacoco.exec</dataFile>
-                            <outputDirectory>target/coverage-reports</outputDirectory>
+                            <dataFile>${project.build.directory}/coverage-reports/jacoco.exec</dataFile>
+                            <outputDirectory>${project.build.directory}/coverage-reports</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

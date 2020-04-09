@@ -1,7 +1,8 @@
-spring:
-  cloud:
-    config:
-      discovery:
-        service-id: config-server
-        enabled: true
-      uri: http://localhost:8504/
+#spring:
+#  cloud:
+#    config:
+#      discovery:
+#        enabled: true
+#        service-id: config-server
+#      uri: http://localhost:8504/
+#      fail-fast: true

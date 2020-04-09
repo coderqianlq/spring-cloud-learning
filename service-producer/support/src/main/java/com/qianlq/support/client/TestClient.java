@@ -1,8 +1,12 @@
 package com.qianlq.support.client;
 
-import com.qianlq.api.v2.api.TestApi;
+import com.qianlq.support.client.hystrix.HystrixClientFallBack;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.netflix.feign.FeignClient;
-import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author CoderQian
@@ -10,7 +14,18 @@ import org.springframework.stereotype.Component;
  * @date 2020-04-01
  */
 
-@Component
-@FeignClient(name = "service-producer")
-public interface TestClient extends TestApi {
+
+@Api(value = "test-client", tags = {"测试接口"})
+@FeignClient(name = "service-producer", fallback = HystrixClientFallBack.class)
+public interface TestClient {
+
+    /**
+     * 测试方法
+     *
+     * @param text 测试数据
+     * @return text
+     */
+    @ApiOperation(value = "提供给Customer调用的测试方法", notes = "测试方法")
+    @RequestMapping(value = "/service-producer/v2/test", method = RequestMethod.GET)
+    String test(@RequestParam(value = "text") String text);
 }

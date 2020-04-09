@@ -25,6 +25,8 @@ public enum Code {
     DEBUG(1, "调试模式"),
     PARAM_NULL(-2, "参数不完整"),
 
+    SERVICE_ERROR(8000, "服务异常"),
+
     // 系统通用模块
     BACK_DOORS(9008, "环境异常"),
     NET_ERROR(9009, "网络错误");
@@ -41,15 +43,7 @@ public enum Code {
         return msg;
     }
 
-    public void setMsg(String msg) {
-        this.msg = msg;
-    }
-
     public int getCode() {
         return code;
-    }
-
-    public void setCode(int code) {
-        this.code = code;
     }
 }

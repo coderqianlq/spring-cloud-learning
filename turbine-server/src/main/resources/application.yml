@@ -1,0 +1,12 @@
+server:
+  port: 8060
+
+spring:
+  application:
+    name: turbine-server
+
+turbine:
+  app-config: service-producer,service-customer
+  cluster-name-expression: new String("default")
+  # 同一主机上的服务通过host和port的组合来进行区分, 默认使用host区分
+  combine-host-port: true

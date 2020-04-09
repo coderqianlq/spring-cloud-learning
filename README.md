@@ -70,8 +70,8 @@ Finally, you can open the registration center(default url: http://localhost:8761
 - [x] Consul
 - [ ] Ribbon
 - [x] Feign
-- [ ] Hystrix
-- [ ] Turbine
+- [x] Hystrix
+- [x] Turbine
 - [x] Zuul
 - [x] Spring Cloud Config
 - [x] Spring Cloud Stream
@@ -84,16 +84,18 @@ To be supplemented...
 
 ## Modules
 
-|      -           |     port     |     remarks     |
-| :-------------   | :----------: | :-------------: |
-| api-gateway      |     9090     |                 |
-| config-server    |     8504     | if you change the port, you need also modify bootstrap.yml of service-customer. |
-| consul-server    |     8502     |                 |
-| eureka-server    |     8761     |                 |
-| feign-server     |     8765     | The simple use of Hystrix is in this module. |
-| service-customer |     8200     | Integrated multiple components, including Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus |
-| service-producer |     8100     |                 |
-| zipkin-server    |     9411     | if you change the port, you need also modify bootstrap.yml of service-customer. |
+|      -            |     port     |     remarks     |
+| :-------------    | :----------: | :-------------: |
+| api-gateway       |     9090     |                 |
+| config-server     |     8504     | if you change the port, you need also modify bootstrap.yml of service-customer. |
+| consul-server     |     8502     |                 |
+| eureka-server     |     8761     |                 |
+| feign-server      |     8765     | The simple use of Hystrix is in this module. |
+| hystrix-dashboard |     8050     |                 |
+| service-customer  |     8200     | Integrated multiple components, including Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus |
+| service-core      |     8100     |                 |
+| turbine-server    |     8060     |                 |
+| zipkin-server     |     9411     | if you change the port, you need also modify bootstrap.yml of service-customer. |
 
 ## Releases
 
@@ -104,7 +106,7 @@ To be supplemented...
 ## Todo
 
 - [ ] Split the module of service-customer.
-- [ ] Add the detailed usage of hystrix with turbine.
+- [x] Add the detailed usage of hystrix with turbine.
 - [ ] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
 - [ ] Add Spring Boot admin dashboard.
 

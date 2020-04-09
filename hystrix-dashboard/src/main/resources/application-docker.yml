@@ -1,0 +1,6 @@
+eureka:
+  instance:
+    hostname: hystrix-server
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-server:8761/eureka/

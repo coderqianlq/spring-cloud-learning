@@ -757,7 +757,7 @@ public class DateUtils {
     }
 
     public static String getDayOfTimestamp(String timestamp) {
-        return getDayOfTimestamp(new Long(timestamp));
+        return getDayOfTimestamp(Long.parseLong(timestamp));
     }
 
 }

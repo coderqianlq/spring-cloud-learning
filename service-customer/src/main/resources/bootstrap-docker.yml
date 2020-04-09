@@ -2,6 +2,7 @@ spring:
   cloud:
     config:
       discovery:
-        service-id: config-server
         enabled: true
+        service-id: config-server
       uri: http://config-server:8504/
+      fail-fast: true

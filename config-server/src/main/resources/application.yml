@@ -10,8 +10,8 @@ spring:
     config:
       server:
         git:
-          uri: https://github.com/coderqianlq/spring-cloud-learning/
-          search-paths: config-coderqian
+          uri: https://github.com/coderqianlq/spring-cloud-learning.git
+          search-paths: config
           # 如果代码仓库是公开的，则不需要设置用户名和密码
           username:
           password:

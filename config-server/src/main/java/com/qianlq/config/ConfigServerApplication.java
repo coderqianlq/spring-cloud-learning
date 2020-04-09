@@ -1,4 +1,4 @@
-package com.qianlq.configserver;
+package com.qianlq.config;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
