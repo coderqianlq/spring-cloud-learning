@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
-[![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg)](https://coveralls.io/github/coderqianlq/spring-cloud-learning)
+[![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg?branch=master)](https://coveralls.io/github/coderqianlq/spring-cloud-learning?branch=master)
 
 ## Contents
 
@@ -99,16 +99,16 @@ To be supplemented...
 
 ## Releases
 
-| Spring Boot | Spring Cloud | Swagger2 |
-| :---------: | :----------: | :------: |
-|    1.5.9    |    Dalston   |   2.7.0  |
+| Spring Boot | Spring Cloud | Spring Boot Admin | Swagger2 |
+| :---------: | :----------: | :---------------: | :------: |
+|    1.5.9    |   Dalston    |       2.1.6       |   2.7.0  |
 
 ## Todo
 
 - [ ] Split the module of service-customer.
 - [x] Add the detailed usage of hystrix with turbine.
 - [ ] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
-- [ ] Add Spring Boot admin dashboard.
+- [x] Add Spring Boot admin dashboard.
 
 ## Collaborators
 

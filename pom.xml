@@ -20,6 +20,7 @@
         <module>consul-server</module> <!-- consul 注册中心 -->
         <module>hystrix-dashboard</module>
         <module>turbine-server</module>
+        <module>admin-dashboard</module>
     </modules>
 
     <properties>
@@ -29,7 +30,7 @@
         <coveralls.version>4.3.0</coveralls.version>
         <jacoco.version>0.8.5</jacoco.version>
         <spring-boot.version>1.5.9.RELEASE</spring-boot.version>
-        <spring-cloud.version>Dalston.RELEASE</spring-cloud.version>
+        <spring-cloud.version>Dalston.SR5</spring-cloud.version>
         <docker.image.prefix>qianlq</docker.image.prefix>
     </properties>
 

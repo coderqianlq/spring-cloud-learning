@@ -1,0 +1,30 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: admin-dashboard
+  security:
+    user:
+      name: admin
+      password: admin
+
+eureka:
+  instance:
+    lease-renewal-interval-in-seconds: 10
+    metadata-map:
+      user.name: ${spring.security.user.name}
+      user.password: ${spring.security.user.password}
+  client:
+    registry-fetch-interval-seconds: 5
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
