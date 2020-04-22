@@ -4,50 +4,52 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg?branch=master)](https://coveralls.io/github/coderqianlq/spring-cloud-learning?branch=master)
 
-## Contents
+## 目录
 
 * [Getting Started](#getting-started)
-  * [Use directly (recommend)](#use-directly-recommend)
-  * [Use docker](#use-docker)
-* [Components](#components)
-* [Modules](#modules)
-* [Dependency Chart](#dependency-chart)
+  * [本地启动（推荐）](#本地启动（推荐）)
+  * [Docker启动](#Docker启动)
+* [微服务组件](#微服务组件)
+* [模块预览](#模块预览)
+* [主要依赖及版本](#主要依赖及版本)
 * [Todo List](#todo-list)
 * [Collaborators](#collaborators)
 * [License](#license)
 
 ## Getting Started
 
-Two methods will mainly introduced, but no matter what you need to clone the code.
+主要介绍两种启动方式，现在还是推荐本地启动，Docker还在学习中，而且服务比较多，现在只配置了几个主要的服务。
+
+首先克隆代码到本地。
 
 ```
 $ git clone https://github.com/coderqianlq/spring-cloud-learning.git
 ```
 
-### Use directly (recommend)
+### 本地启动（推荐）
 
-You can use ide to import the project with maven, and use ide or use command line to start project.
+使用IDE以maven方式打开项目，并使用IDE或者命令行启动项目。
 
 ```
 $ mvn spring-boot:run
 ```
 
-You can also package the code and run it.
+或者打包项目后使用jar命令启动。
 
 ```
 $ java -jar xxx.jar
 ```
 
-### Use docker
+### Docker启动
 
-First, you have to make sure you have installed docker and start docker server.
+首先，确认已经安装docker并启动它。
 
 ```
 $ docker --version
 Docker version 18.06.1-ce, build e68fc7a
 ```
 
-Then, you need to enter each submodule and execute the docker building command.
+然后，进入每个子模块执行docker构建命令。
 
 ```
 $ cd eureka-server
@@ -55,15 +57,15 @@ $ cd eureka-server
 $ mvn clean package -Pdocker docker:build
 ```
 
-Next, return to the parent module and execute docker-compose command.
+接着，返回父模块执行docker-compose命令。
 
 ```
 $ docker-compose up -d
 ```
 
-Finally, you can open the registration center(default url: http://localhost:8761) to see if the service is registered successfully.
+最后，你可以打开注册中心（默认url: http://localhost:8761）查看服务是否注册成功。
 
-## Components
+## 微服务组件
 
 - [x] Eureka
 - [x] Consul
@@ -79,24 +81,24 @@ Finally, you can open the registration center(default url: http://localhost:8761
 - [ ] Spring Cloud Security
 - [ ] Spring Cloud Task
 
-To be supplemented...
+补充中...
 
-## Modules
+## 模块预览
 
 |      -            |     port     |     remarks     |
 | :-------------    | :----------: | :-------------: |
 | api-gateway       |     9090     |                 |
-| config-server     |     8504     | if you change the port, you need also modify bootstrap.yml of service-customer. |
+| config-server     |     8504     | 如果修改了该模块端口，你需要同时修改service-customer模块的bootstrap.yml配置中心的端口 |
 | consul-server     |     8502     |                 |
 | eureka-server     |     8761     |                 |
-| feign-server      |     8765     | The simple use of Hystrix is in this module. |
+| feign-server      |     8765     | 应该没啥用，有时间会把它删了 |
 | hystrix-dashboard |     8050     |                 |
-| service-customer  |     8200     | Integrated multiple components, including Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus |
+| service-customer  |     8200     | 集成了多个组件的使用，包括Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus, 后面有时间拆出去 |
 | service-core      |     8100     |                 |
 | turbine-server    |     8060     |                 |
-| zipkin-server     |     9411     | if you change the port, you need also modify bootstrap.yml of service-customer. |
+| zipkin-server     |     9411     | 同config-server的备注 |
 
-## Dependency Chart
+## 主要依赖及版本
 
 | Spring Boot | Spring Cloud | Spring Boot Admin | Swagger2 |
 | :---------: | :----------: | :---------------: | :------: |
@@ -104,10 +106,10 @@ To be supplemented...
 
 ## Todo List
 
-- [ ] Split the module of service-customer.
-- [x] Add the detailed usage of hystrix with turbine.
-- [ ] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
-- [x] Add Spring Boot admin dashboard.
+- [ ] 拆分service-customer服务（这个服务太笨重了，一开始想着自个练习用，不利于初学Spring Cloud的程序员👨‍💻们‍使用）.
+- [x] 添加监控hystrix和集群监控turbine的详细用法.
+- [ ] 升级Spring Boot 2.0, 同时升级Spring Cloud Greenwich.
+- [x] 添加Spring Boot admin dashboard.
 
 ## Collaborators
 
@@ -136,7 +138,7 @@ To be supplemented...
       </a>
     </td>
   </tr>
-</table>  
+</table>
 
 ## License
 [MIT](LICENSE) © CoderQian
