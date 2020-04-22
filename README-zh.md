@@ -67,7 +67,7 @@ $ mvn clean package -Pdocker docker:build
 $ docker-compose up -d
 ```
 
-最后，你可以打开注册中心（默认url: http://localhost:8761）查看服务是否注册成功。
+最后，你可以打开注册中心（默认url: [http://localhost:8761](http://localhost:8761)）查看服务是否注册成功。
 
 ## 微服务组件
 
