@@ -1,8 +1,12 @@
-## Spring-Cloud-Learning [English](README.md) | [中文](README-zh.md)
+# Spring-Cloud-Learning
 
 [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg?branch=master)](https://coveralls.io/github/coderqianlq/spring-cloud-learning?branch=master)
+
+README: [English](README.md) | [中文](README-zh.md)
+
+spring-cloud-learning适合刚接触微服务架构的初学者用来初步了解和学习微服务，主要集成了注册中心，服务网关，配置中心，熔断机制和应用监控。
 
 ## 目录
 
@@ -11,7 +15,7 @@
   * [Docker启动](#Docker启动)
 * [微服务组件](#微服务组件)
 * [模块预览](#模块预览)
-* [主要依赖及版本](#主要依赖及版本)
+* [依赖版本](#依赖版本)
 * [Todo List](#todo-list)
 * [Collaborators](#collaborators)
 * [License](#license)
@@ -98,7 +102,7 @@ $ docker-compose up -d
 | turbine-server    |     8060     |                 |
 | zipkin-server     |     9411     | 同config-server的备注 |
 
-## 主要依赖及版本
+## 依赖版本
 
 | Spring Boot | Spring Cloud | Spring Boot Admin | Swagger2 |
 | :---------: | :----------: | :---------------: | :------: |

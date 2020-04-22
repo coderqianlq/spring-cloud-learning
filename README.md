@@ -1,10 +1,14 @@
-## Spring-Cloud-Learning [English](README.md) | [中文](README-zh.md)
+# Spring-Cloud-Learning
 
 [![Build Status](https://travis-ci.org/coderqianlq/spring-cloud-learning.svg?branch=master)](https://travis-ci.org/coderqianlq/spring-cloud-learning)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Coverage Status](https://coveralls.io/repos/github/coderqianlq/spring-cloud-learning/badge.svg?branch=master)](https://coveralls.io/github/coderqianlq/spring-cloud-learning?branch=master)
 
-## Contents
+README: [English](README.md) | [中文](README-zh.md)
+
+spring-cloud-learning can be used as a project to learn microservices, and it's mainly contain service discovery, service gateway, configuration management, circuit breakers, application monitor.
+
+## Table of Contents
 
 * [Getting Started](#getting-started)
   * [Use directly (recommend)](#use-directly-recommend)
