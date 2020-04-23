@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Arrays;
 
 /**
- * @author qianliqing
+ * @author CoderQian
  * @version v1.0
  * @date 2020-04-06
  */
@@ -18,8 +18,7 @@ import java.util.Arrays;
 public class FeignBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 
     /**
-     *
-     * @param beanFactory
+     * @param beanFactory bean工厂
      * @throws BeansException
      */
     @Override

@@ -20,7 +20,7 @@ package com.qianlq.customer.common.constant;
 public enum Code {
 
     // 通用模块
-    UNDEFINED(-1, "未定义"),
+    FAILED(-1, "失败"),
     SUCCESS(0, "成功"),
     DEBUG(1, "调试模式"),
     PARAM_NULL(-2, "参数不完整"),

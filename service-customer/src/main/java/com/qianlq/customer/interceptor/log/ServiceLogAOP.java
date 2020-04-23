@@ -1,6 +1,7 @@
 package com.qianlq.customer.interceptor.log;
 
-import com.qianlq.customer.util.LogUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -23,6 +24,8 @@ import java.lang.reflect.Parameter;
 @Aspect
 public class ServiceLogAOP {
 
+    private static Logger logger = LogManager.getLogger(ServiceLogAOP.class);
+
     @Pointcut("execution(public * com.qianlq.customer.service.impl.*.*(..))")
     public void logTarget() {
     }
@@ -35,11 +38,10 @@ public class ServiceLogAOP {
         Parameter[] parameters = method.getParameters();
         String targetClassName = joinPoint.getTarget().getClass().getName();
         Object[] args = joinPoint.getArgs();
-        LogUtils.info("className: " + targetClassName);
-        LogUtils.info("methodName: " + methodName);
+        logger.info("className: {}, methodName: {}", targetClassName, methodName);
         if (args != null && args.length > 0) {
             for (int i = 0; i < args.length; i++) {
-                LogUtils.info(parameters[i].getName() + ": " + parameters[i].getType().getName() + ": " + args[i]);
+                logger.info("{}: {}: {}", parameters[i].getName(), parameters[i].getType().getName(), args[i]);
             }
         }
         return joinPoint.proceed();

@@ -6,7 +6,7 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.turbine.EnableTurbine;
 
 /**
- * @author qianliqing
+ * @author CoderQian
  * @version v1.0
  * @date 2020-04-09
  */

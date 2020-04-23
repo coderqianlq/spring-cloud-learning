@@ -1,8 +1,8 @@
 package com.qianlq.customer.common.exception;
 
-import com.qianlq.customer.common.BaseResult;
-import lombok.AllArgsConstructor;
+import com.qianlq.customer.common.constant.Code;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author CoderQian
@@ -13,21 +13,27 @@ import lombok.Data;
  */
 
 @Data
-@AllArgsConstructor
+@EqualsAndHashCode(callSuper = true)
 public abstract class BaseException extends RuntimeException {
 
     private int code;
     private String msg;
-    private BaseResult baseResult;
 
     BaseException() {
-        super();
+        this(Code.FAILED);
+    }
+
+    BaseException(String msg) {
+        this(Code.FAILED.getCode(), msg);
+    }
+
+    BaseException(Code code) {
+        this(code.getCode(), code.getMsg());
     }
 
     BaseException(int code, String msg) {
         super(msg);
         this.code = code;
         this.msg = msg;
-        this.baseResult = new BaseResult(code, msg);
     }
 }

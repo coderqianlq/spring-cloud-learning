@@ -1,8 +1,13 @@
-#spring:
-#  cloud:
-#    config:
-#      discovery:
-#        enabled: true
-#        service-id: config-server
-#      uri: http://localhost:8504/
-#      fail-fast: true
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config-server
+      uri: http://localhost:8504/
+      fail-fast: true
