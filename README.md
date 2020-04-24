@@ -115,7 +115,7 @@ Finally, you can open the registration center(default url: http://localhost:8761
 
 | Spring Boot | Spring Cloud | Spring Boot Admin | Swagger2 |
 | :---------: | :----------: | :---------------: | :------: |
-|    1.5.9    |   Dalston    |       2.1.6       |   2.7.0  |
+|    2.1.5    |   Greenwich  |       2.1.6       |   2.7.0  |
 
 ## Todo List
 
