@@ -18,30 +18,8 @@
     <description>Spring boot admin dashboard server</description>
 
     <properties>
-        <spring-boot-admin.version>2.1.8.RELEASE</spring-boot-admin.version>
-        <spring-cloud-admin.version>Greenwich.RELEASE</spring-cloud-admin.version>
         <spring-boot-admin-server.version>2.1.6</spring-boot-admin-server.version>
     </properties>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <version>${spring-boot-admin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud-admin.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
     <dependencies>
         <dependency>
