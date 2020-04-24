@@ -6,3 +6,7 @@ spring:
     name: service-producer
   profiles:
     active: @profiles.active@
+
+management:
+  security:
+    enabled: false

@@ -34,3 +34,7 @@ zuul:
 #      path: /feign/**
 #      # 由网关分发到feign，再经feign负载均衡
 #      service-id: feign-server
+
+management:
+  security:
+    enabled: false

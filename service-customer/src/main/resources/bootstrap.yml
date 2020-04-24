@@ -41,6 +41,7 @@ spring:
 logging:
   config: classpath:log4j2.xml
 
+# 启动hystrix
 feign:
   hystrix:
     enabled: true
