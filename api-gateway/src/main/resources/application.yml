@@ -12,9 +12,14 @@ spring:
         enabled: true
 
 eureka:
+  client:
+    # 表示拉取服务注册信息的间隔
+    registry-fetch-interval-seconds: 5
   instance:
+    # 表示向server端发送心跳频率
     lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
+    # 表示等待下一次心跳的超时时间，在这个时间内若没收到下一次心跳，则将移除该instance
+    lease-expiration-duration-in-seconds: 30
     prefer-ip-address: true
 
 zuul:
@@ -36,5 +41,10 @@ zuul:
 #      service-id: feign-server
 
 management:
-  security:
-    enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

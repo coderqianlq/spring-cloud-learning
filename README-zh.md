@@ -10,15 +10,34 @@ spring-cloud-learning适合刚接触微服务架构的初学者用来初步了�
 
 ## 目录
 
+* [微服务组件](#微服务组件)
 * [Getting Started](#getting-started)
   * [本地启动（推荐）](#本地启动（推荐）)
   * [Docker启动](#Docker启动)
-* [微服务组件](#微服务组件)
+* [截图预览](#截图预览)
 * [模块预览](#模块预览)
 * [依赖版本](#依赖版本)
 * [Todo List](#todo-list)
 * [Collaborators](#collaborators)
 * [License](#license)
+
+## 微服务组件
+
+- [x] Eureka
+- [x] Consul
+- [ ] Ribbon
+- [x] Feign
+- [x] Hystrix
+- [x] Turbine
+- [x] Zuul
+- [x] Spring Cloud Config
+- [x] Spring Cloud Stream
+- [x] Spring Cloud Bus
+- [ ] Spring Cloud Sleuth
+- [ ] Spring Cloud Security
+- [ ] Spring Cloud Task
+
+补充中...
 
 ## Getting Started
 
@@ -69,23 +88,15 @@ $ docker-compose up -d
 
 最后，你可以打开注册中心（默认url: [http://localhost:8761](http://localhost:8761)）查看服务是否注册成功。
 
-## 微服务组件
+## 截图预览
 
-- [x] Eureka
-- [x] Consul
-- [ ] Ribbon
-- [x] Feign
-- [x] Hystrix
-- [x] Turbine
-- [x] Zuul
-- [x] Spring Cloud Config
-- [x] Spring Cloud Stream
-- [x] Spring Cloud Bus
-- [ ] Spring Cloud Sleuth
-- [ ] Spring Cloud Security
-- [ ] Spring Cloud Task
+![Spring boot admin wallboard](screenshots/Spring%20boot%20admin%20wallboard.png)
 
-补充中...
+![Spring Boot admin detail](screenshots/Spring%20boot%20admin%20detail.png)
+
+![Service customer hystrix stream](screenshots/Service%20customer%20hystrix%20stream.png)
+
+![Hystrix monitor](screenshots/Hystrix%20monitor.png)
 
 ## 模块预览
 
@@ -112,7 +123,7 @@ $ docker-compose up -d
 
 - [ ] 拆分service-customer服务（这个服务太笨重了，一开始想着自个练习用，不利于初学Spring Cloud的程序员👨‍💻们‍使用）.
 - [x] 添加监控hystrix和集群监控turbine的详细用法.
-- [ ] 升级Spring Boot 2.0, 同时升级Spring Cloud Greenwich.
+- [x] 升级Spring Boot 2.0, 同时升级Spring Cloud Greenwich.
 - [x] 添加Spring Boot admin dashboard.
 
 ## Collaborators

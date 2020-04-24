@@ -15,7 +15,3 @@ spring:
           # 如果代码仓库是公开的，则不需要设置用户名和密码
           username:
           password:
-
-management:
-  security:
-    enabled: false

@@ -10,15 +10,34 @@ spring-cloud-learning can be used as a project to learn microservices, and it's 
 
 ## Table of Contents
 
+* [Components](#components)
 * [Getting Started](#getting-started)
   * [Use directly (recommend)](#use-directly-recommend)
   * [Use docker](#use-docker)
-* [Components](#components)
+* [Preview](#preview)
 * [Modules](#modules)
 * [Dependency Chart](#dependency-chart)
 * [Todo List](#todo-list)
 * [Collaborators](#collaborators)
 * [License](#license)
+
+## Components
+
+- [x] Eureka
+- [x] Consul
+- [ ] Ribbon
+- [x] Feign
+- [x] Hystrix
+- [x] Turbine
+- [x] Zuul
+- [x] Spring Cloud Config
+- [x] Spring Cloud Stream
+- [x] Spring Cloud Bus
+- [ ] Spring Cloud Sleuth
+- [ ] Spring Cloud Security
+- [ ] Spring Cloud Task
+
+To be supplemented...
 
 ## Getting Started
 
@@ -67,23 +86,15 @@ $ docker-compose up -d
 
 Finally, you can open the registration center(default url: http://localhost:8761) to see if the service is registered successfully.
 
-## Components
+## Preview
 
-- [x] Eureka
-- [x] Consul
-- [ ] Ribbon
-- [x] Feign
-- [x] Hystrix
-- [x] Turbine
-- [x] Zuul
-- [x] Spring Cloud Config
-- [x] Spring Cloud Stream
-- [x] Spring Cloud Bus
-- [ ] Spring Cloud Sleuth
-- [ ] Spring Cloud Security
-- [ ] Spring Cloud Task
+![Spring boot admin wallboard](screenshots/Spring%20boot%20admin%20wallboard.png)
 
-To be supplemented...
+![Spring Boot admin detail](screenshots/Spring%20boot%20admin%20detail.png)
+
+![Service customer hystrix stream](screenshots/Service%20customer%20hystrix%20stream.png)
+
+![Hystrix monitor](screenshots/Hystrix%20monitor.png)
 
 ## Modules
 
@@ -110,7 +121,7 @@ To be supplemented...
 
 - [ ] Split the module of service-customer.
 - [x] Add the detailed usage of hystrix with turbine.
-- [ ] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
+- [x] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
 - [x] Add Spring Boot admin dashboard.
 
 ## Collaborators

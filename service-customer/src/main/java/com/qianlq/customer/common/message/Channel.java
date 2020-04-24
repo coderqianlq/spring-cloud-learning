@@ -13,8 +13,8 @@ import org.springframework.messaging.SubscribableChannel;
 
 public interface Channel {
 
-    String CONSUMER = "consumer";
-    String PRODUCER = "producer";
+    String CONSUMER = "consumer-test";
+    String PRODUCER = "producer-test";
 
     /**
      * 消息消费者

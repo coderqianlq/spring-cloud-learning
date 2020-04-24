@@ -14,7 +14,7 @@
     <packaging>jar</packaging>
 
     <name>eureka-server</name>
-    <description>Eureka server as a registry</description>
+    <description>Eureka server as a discovery</description>
 
     <profiles>
         <profile>
@@ -38,12 +38,7 @@
         <!-- 引入Eureka服务包-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-config</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
     </dependencies>
 

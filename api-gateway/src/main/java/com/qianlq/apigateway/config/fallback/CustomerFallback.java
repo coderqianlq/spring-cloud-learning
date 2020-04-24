@@ -1,6 +1,6 @@
 package com.qianlq.apigateway.config.fallback;
 
-import org.springframework.cloud.netflix.zuul.filters.route.ZuulFallbackProvider;
+import org.springframework.cloud.netflix.zuul.filters.route.FallbackProvider;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -18,7 +18,7 @@ import java.nio.charset.StandardCharsets;
  * email: qianlq0824@gmail.com
  */
 @Component
-public class CustomerFallback implements ZuulFallbackProvider {
+public class CustomerFallback implements FallbackProvider {
 
     private static final String SERVICE_CUSTOMER = "service-customer";
 
@@ -28,7 +28,7 @@ public class CustomerFallback implements ZuulFallbackProvider {
     }
 
     @Override
-    public ClientHttpResponse fallbackResponse() {
+    public ClientHttpResponse fallbackResponse(String route, Throwable cause) {
         return new ClientHttpResponse() {
             @Override
             public HttpStatus getStatusCode() throws IOException {
@@ -52,7 +52,7 @@ public class CustomerFallback implements ZuulFallbackProvider {
 
             @Override
             public InputStream getBody() throws IOException {
-                return new ByteArrayInputStream(("The " + SERVICE_CUSTOMER + " is unavailable.").getBytes(StandardCharsets.UTF_8));
+                return new ByteArrayInputStream(("The " + route + " is unavailable.").getBytes(StandardCharsets.UTF_8));
             }
 
             @Override
