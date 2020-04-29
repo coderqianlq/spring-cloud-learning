@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 /**
  * @author CoderQian
  * @date 2018-10-16 下午5:08
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @Component

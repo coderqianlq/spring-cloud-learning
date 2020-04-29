@@ -3,7 +3,7 @@ package com.qianlq.customer.common.constant;
 /**
  * @author CoderQian
  * @date 2018-09-28 下午9:11
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * [-999,999]    通用模块
  * [1000 - 1999] 登录注册，权限校验

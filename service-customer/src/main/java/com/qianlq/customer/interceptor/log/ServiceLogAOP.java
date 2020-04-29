@@ -15,7 +15,7 @@ import java.lang.reflect.Parameter;
 /**
  * @author CoderQian
  * @date 2018-09-28 下午2:29
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * 日志切面
  */

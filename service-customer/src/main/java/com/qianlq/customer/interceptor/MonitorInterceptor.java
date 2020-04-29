@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * @author CoderQian
  * @date 2018-12-14 3:38 PM
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @Component

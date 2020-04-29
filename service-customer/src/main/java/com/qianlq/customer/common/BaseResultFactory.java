@@ -5,7 +5,7 @@ import com.qianlq.customer.common.constant.Code;
 /**
  * @author CoderQian
  * @date 2018-10-02 下午2:52
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 public class BaseResultFactory {

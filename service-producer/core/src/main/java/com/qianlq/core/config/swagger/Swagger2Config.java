@@ -1,7 +1,10 @@
 package com.qianlq.core.config.swagger;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.builders.ApiInfoBuilder;
 import springfox.documentation.builders.ParameterBuilder;
 import springfox.documentation.builders.PathSelectors;
@@ -19,14 +22,16 @@ import java.util.List;
 /**
  * @author CoderQian
  * @date 2018-09-28 上午11:30
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * swagger2配置
  */
 
 @Configuration
+@EnableKnife4j
 @EnableSwagger2
-public class Swagger2 {
+@Import(BeanValidatorPluginsConfiguration.class)
+public class Swagger2Config {
 
     @Bean
     public Docket createRestApi() {
@@ -37,19 +42,19 @@ public class Swagger2 {
         pars.add(tokenPar.build());
 
         return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.qianlq.core.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .globalOperationParameters(pars)
-                .apiInfo(apiInfo());
+                .globalOperationParameters(pars);
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("service-producer")
                 .description("Demo project for Spring Boot")
-                .termsOfServiceUrl("https://www.qianlq.com")
+                .termsOfServiceUrl("http://localhost:8100")
                 .version("1.0")
                 .build();
     }

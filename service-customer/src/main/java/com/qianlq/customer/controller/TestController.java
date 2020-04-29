@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author CoderQian
  * @date 2018-09-28 下午2:37
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * 测试类
  */
@@ -24,7 +24,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RefreshScope
 @RestController
 @RequestMapping(value = "/v1/test")
-@Api(value = "test-controller", tags = {"测试模块"})
+@Api(value = "test-controller", tags = "测试模块")
 public class TestController {
 
     @Value("${profile}")
@@ -42,7 +42,7 @@ public class TestController {
         this.testService = testService;
     }
 
-    @ApiOperation(value = "返回用户输入的结果", notes = "返回用户输入的结果")
+    @ApiOperation(value = "返回用户输入的结果", notes = "返回用户输入的结果", response = String.class)
     @RequestMapping(value = "/result", method = RequestMethod.GET)
     public String test(@ApiParam(value = "测试内容", required = true) @RequestParam(value = "text") String text) {
         return testService.test(text);
@@ -54,25 +54,25 @@ public class TestController {
         testService.testException(text);
     }
 
-    @ApiOperation(value = "返回统一的baseResult", notes = "返回统一的baseResult，推荐使用这种方式，所有的返回结果统一用baseResult组装")
+    @ApiOperation(value = "测试baseResult", notes = "返回统一的baseResult，推荐使用这种方式，所有的返回结果统一用baseResult组装", response = String.class)
     @RequestMapping(value = "/baseResult", method = RequestMethod.GET)
     public BaseResult<String> testBaseResult(@ApiParam(value = "测试内容", required = true) @RequestParam(value = "text") String text) {
         return testService.testBaseResult(text);
     }
 
-    @ApiOperation(value = "测试服务间调用", notes = "测试服务间调用")
+    @ApiOperation(value = "测试服务间调用", notes = "测试服务间调用", response = String.class)
     @RequestMapping(value = "/client", method = RequestMethod.GET)
     public BaseResult<String> testClient(@RequestParam(value = "text") String text) {
         return testService.testClient(text);
     }
 
-    @ApiOperation(value = "读取配置文件", notes = "读取配置文件")
+    @ApiOperation(value = "读取配置文件", notes = "读取配置文件", response = String.class)
     @RequestMapping(value = "/config", method = RequestMethod.GET)
     public String testConfig() {
         return "mysql:" + mysql + ", redis:" + redis;
     }
 
-    @ApiOperation(value = "测试消息总线", notes = "测试消息总线")
+    @ApiOperation(value = "测试消息总线", notes = "测试消息总线", response = String.class)
     @RequestMapping(value = "/bus", method = RequestMethod.GET)
     public String testBus() {
         return profile;
@@ -84,7 +84,7 @@ public class TestController {
         testService.producer(message);
     }
 
-    @ApiOperation(value = "测试MapStruct", notes = "测试MapStruct")
+    @ApiOperation(value = "测试MapStruct", notes = "测试MapStruct", response = UserDto.class)
     @RequestMapping(value = "/struct", method = RequestMethod.GET)
     public BaseResult<UserDto> testMapStruct() {
         return testService.testMapStruct();

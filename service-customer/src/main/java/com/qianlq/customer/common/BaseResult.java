@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * @author CoderQian
  * @date 2018-09-28 下午9:05
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * 统一的返回类型
  */

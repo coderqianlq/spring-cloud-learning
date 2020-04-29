@@ -15,7 +15,7 @@ import java.nio.charset.StandardCharsets;
 /**
  * @author CoderQian
  * @date 2019/6/28 2:23 PM
- * email: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 @Component
 public class CustomerFallback implements FallbackProvider {
