@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 /**
  * @author CoderQian
  * @date 2019/1/17 12:19 PM
- * email: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @Configuration

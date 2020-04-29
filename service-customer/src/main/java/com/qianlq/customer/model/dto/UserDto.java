@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * @author CoderQian
  * @date 2019/1/17 2:57 PM
- * email: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @Data

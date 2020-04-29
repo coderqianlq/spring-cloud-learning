@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Scope;
 /**
  * @author CoderQian
  * @date 2018-10-16 下午5:29
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 //@Configuration

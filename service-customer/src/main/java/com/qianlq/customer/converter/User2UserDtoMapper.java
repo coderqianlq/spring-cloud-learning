@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * @author CoderQian
  * @date 2019/1/17 2:49 PM
- * email: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @Mapper(componentModel = "spring")

@@ -5,7 +5,7 @@ import com.qianlq.customer.common.constant.Code;
 /**
  * @author CoderQian
  * @date 2018-09-28 下午9:09
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * 业务异常类
  */

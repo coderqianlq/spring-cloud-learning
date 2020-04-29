@@ -1,5 +1,6 @@
-package com.qianlq.customer.config.swagger;
+package com.qianlq.core.config.swagger;
 
+import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -25,6 +26,7 @@ import java.util.List;
  */
 
 @Configuration
+@EnableKnife4j
 @EnableSwagger2
 public class Swagger2 {
 
@@ -37,19 +39,19 @@ public class Swagger2 {
         pars.add(tokenPar.build());
 
         return new Docket(DocumentationType.SWAGGER_2)
+                .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.qianlq.customer.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.qianlq.core.controller"))
                 .paths(PathSelectors.any())
                 .build()
-                .globalOperationParameters(pars)
-                .apiInfo(apiInfo());
+                .globalOperationParameters(pars);
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("service-customer")
+                .title("service-producer")
                 .description("Demo project for Spring Boot")
-                .termsOfServiceUrl("https://www.qianlq.com")
+                .termsOfServiceUrl("http://localhost:8100")
                 .version("1.0")
                 .build();
     }

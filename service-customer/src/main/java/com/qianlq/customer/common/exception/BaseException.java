@@ -7,7 +7,7 @@ import lombok.EqualsAndHashCode;
 /**
  * @author CoderQian
  * @date 2018-09-28 下午9:14
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  * <p>
  * 基本异常类
  */

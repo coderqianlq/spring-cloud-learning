@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 /**
  * @author CoderQian
  * @date 2018-10-02 下午3:15
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @RunWith(SpringRunner.class)

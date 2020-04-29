@@ -10,7 +10,7 @@ import java.io.Serializable;
 /**
  * @author CoderQian
  * @date 2018-10-02 下午2:33
- * mail: qianlq0824@gmail.com
+ * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
  */
 
 @Data
