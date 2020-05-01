@@ -13,14 +13,14 @@
         <module>eureka-server</module>
         <module>service-producer</module>
         <module>service-customer</module>
-        <module>api-gateway</module>
+        <module>api-gateway</module> <!-- zuul 网关 -->
         <module>config-server</module>
-        <module>feign-server</module>
         <module>zipkin-server</module>
         <module>consul-server</module> <!-- consul 注册中心 -->
         <module>hystrix-dashboard</module>
         <module>turbine-server</module>
         <module>admin-dashboard</module>
+        <module>gateway-server</module> <!-- gateway 网关 -->
     </modules>
 
     <properties>
