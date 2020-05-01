@@ -20,6 +20,7 @@
         <module>hystrix-dashboard</module>
         <module>turbine-server</module>
         <module>admin-dashboard</module>
+        <module>gateway-server</module> <!-- gateway 网关 -->
     </modules>
 
     <properties>

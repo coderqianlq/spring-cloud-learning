@@ -1,0 +1,77 @@
+server:
+  port: 8080
+
+# gateway configuration
+spring:
+  application:
+    name: gateway-server
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          # 开启服务注册与服务发现功能,通过serviceId转发到具体的服务实例
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: service-customer
+          uri: lb://service-customer
+          predicates:
+            - Path=/customer/**
+          filters:
+            - name: Retry
+              args:
+                retries: 3
+                status: 503
+            - name: Hystrix
+              args:
+                name: fallbackcmd
+                fallbackUri: forward:/fallback
+            # 使用StripPrefix在转发之前将/customer去掉
+            - StripPrefix=1
+        - id: service-producer
+          uri: lb://service-producer
+          predicates:
+            - Path=/producer/**
+          filters:
+            - StripPrefix=1
+        - id: config-server
+          uri: lb://config-server
+          predicates:
+            - Path=/config/**
+          filters:
+            - StripPrefix=1
+      # 跨域访问
+#      globalcors:
+#        cors-configurations:
+#          '[/**]':
+#            allowedOrigins: "https://www.qianlq.com"
+#            allowedMethods:
+#              - GET
+
+# eureka configuration
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    registry-fetch-interval-seconds: 5
+  instance:
+    lease-renewal-interval-in-seconds: 5
+    lease-expiration-duration-in-seconds: 30
+    prefer-ip-address: true
+
+# hystrix configuration
+hystrix:
+  metrics:
+    enabled: true
+    # 超时时间,默认2000ms
+    polling-interval-ms: 5000
+
+# security configuration
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
