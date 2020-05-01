@@ -36,6 +36,7 @@ spring-cloud-learning can be used as a project to learn microservices, and it's 
 - [ ] Spring Cloud Sleuth
 - [ ] Spring Cloud Security
 - [ ] Spring Cloud Task
+- [x] Spring Cloud Gateway
 
 To be supplemented...
 
@@ -105,6 +106,7 @@ Finally, you can open the registration center(default url: http://localhost:8761
 | config-server     |     8504     | if you change the port, you need also modify bootstrap.yml of service-customer. |
 | consul-server     |     8502     | Service discovery(Consul) |
 | eureka-server     |     8761     | Service discovery(Eureka) |
+| gateway-server    |     8080     | Service gateway(Gateway) |
 | hystrix-dashboard |     8050     |                 |
 | service-customer  |     8200     | Integrated multiple components, including Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus |
 | service-producer  |     8100     |                 |
@@ -123,7 +125,7 @@ Finally, you can open the registration center(default url: http://localhost:8761
 - [x] Add the detailed usage of hystrix with turbine.
 - [x] Update Spring Boot to 2.x and both Spring Cloud to Greenwich.
 - [x] Add Spring Boot admin dashboard.
-- [ ] Use Spring Cloud Gateway replaces zuul as service gateway.
+- [x] Use Spring Cloud Gateway replaces zuul as service gateway.
 
 ## Collaborators
 

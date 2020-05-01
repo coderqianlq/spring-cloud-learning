@@ -36,6 +36,7 @@ spring-cloud-learning适合刚接触微服务架构的初学者用来初步了�
 - [ ] Spring Cloud Sleuth
 - [ ] Spring Cloud Security
 - [ ] Spring Cloud Task
+- [x] Spring Cloud Gateway
 
 补充中...
 
@@ -107,6 +108,7 @@ $ docker-compose up -d
 | config-server     |     8504     | 如果修改了该模块端口，你需要同时修改service-customer模块的bootstrap.yml配置中心的端口 |
 | consul-server     |     8502     | 服务发现(Consul) |
 | eureka-server     |     8761     | 服务发现(Eureka) |
+| gateway-server    |     8080     | 服务网关(Gateway) |
 | hystrix-dashboard |     8050     |                 |
 | service-customer  |     8200     | 集成了多个组件的使用，包括Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus, 后面有时间拆出去 |
 | service-producer  |     8100     |                 |
@@ -125,7 +127,7 @@ $ docker-compose up -d
 - [x] 添加监控hystrix和集群监控turbine的详细用法。
 - [x] 升级Spring Boot 2.0, 同时升级Spring Cloud Greenwich。
 - [x] 添加Spring Boot admin dashboard。
-- [ ] 使用Spring Cloud Gateway替代Zuul做服务网关（应该还会保留Zuul）。
+- [x] 使用Spring Cloud Gateway替代Zuul做服务网关（应该还会保留Zuul）。
 
 ## Collaborators
 
