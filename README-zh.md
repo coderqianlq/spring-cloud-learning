@@ -102,14 +102,14 @@ $ docker-compose up -d
 
 |      -            |     port     |     remarks     |
 | :-------------    | :----------: | :-------------: |
-| api-gateway       |     9090     |                 |
+| admin-dashboard   |     8040     | Spring boot admin dashboard 监控服务 |
+| api-gateway       |     9090     | 服务网关(Zuul)   |
 | config-server     |     8504     | 如果修改了该模块端口，你需要同时修改service-customer模块的bootstrap.yml配置中心的端口 |
-| consul-server     |     8502     |                 |
-| eureka-server     |     8761     |                 |
-| feign-server      |     8765     | 应该没啥用，有时间会把它删了 |
+| consul-server     |     8502     | 服务发现(Consul) |
+| eureka-server     |     8761     | 服务发现(Eureka) |
 | hystrix-dashboard |     8050     |                 |
 | service-customer  |     8200     | 集成了多个组件的使用，包括Feign, Spring Cloud Config, Spring Cloud Stream, Spring Cloud Bus, 后面有时间拆出去 |
-| service-core      |     8100     |                 |
+| service-producer  |     8100     |                 |
 | turbine-server    |     8060     |                 |
 | zipkin-server     |     9411     | 同config-server的备注 |
 
@@ -121,10 +121,11 @@ $ docker-compose up -d
 
 ## Todo List
 
-- [ ] 拆分service-customer服务（这个服务太笨重了，一开始想着自个练习用，不利于初学Spring Cloud的程序员👨‍💻们‍使用）.
-- [x] 添加监控hystrix和集群监控turbine的详细用法.
-- [x] 升级Spring Boot 2.0, 同时升级Spring Cloud Greenwich.
-- [x] 添加Spring Boot admin dashboard.
+- [ ] 拆分service-customer服务（这个服务太笨重了，一开始想着自个练习用，不利于初学Spring Cloud的程序员👨‍💻们‍使用）。
+- [x] 添加监控hystrix和集群监控turbine的详细用法。
+- [x] 升级Spring Boot 2.0, 同时升级Spring Cloud Greenwich。
+- [x] 添加Spring Boot admin dashboard。
+- [ ] 使用Spring Cloud Gateway替代Zuul做服务网关（应该还会保留Zuul）。
 
 ## Collaborators
 

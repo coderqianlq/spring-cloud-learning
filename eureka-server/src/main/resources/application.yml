@@ -12,8 +12,6 @@ eureka:
   instance:
     prefer-ip-address: true
     instance-id: ${spring.application.name}:${server.port}
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
   client:
     # 表示是否将自己注册到Eureka Server上，默认为true
     register-with-eureka: false
