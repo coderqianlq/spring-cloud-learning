@@ -17,7 +17,7 @@
     <description>Service producer core</description>
 
     <properties>
-        <guava.version>20.0</guava.version>
+        <guava.version>[24.1.1,)</guava.version>
         <knife4j.version>2.0.2</knife4j.version>
     </properties>
 
