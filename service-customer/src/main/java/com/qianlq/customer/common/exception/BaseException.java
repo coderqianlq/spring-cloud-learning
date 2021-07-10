@@ -1,23 +1,12 @@
 package com.qianlq.customer.common.exception;
 
 import com.qianlq.customer.common.constant.Code;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
-/**
- * @author CoderQian
- * @date 2018-09-28 下午9:14
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- * <p>
- * 基本异常类
- */
-
-@Data
-@EqualsAndHashCode(callSuper = true)
 public abstract class BaseException extends RuntimeException {
 
-    private int code;
-    private String msg;
+    private final int code;
+
+    private final String msg;
 
     BaseException() {
         this(Code.FAILED);
@@ -35,5 +24,13 @@ public abstract class BaseException extends RuntimeException {
         super(msg);
         this.code = code;
         this.msg = msg;
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public String getMsg() {
+        return msg;
     }
 }

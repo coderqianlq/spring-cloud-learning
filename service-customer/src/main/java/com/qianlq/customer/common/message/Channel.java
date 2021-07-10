@@ -5,12 +5,6 @@ import org.springframework.cloud.stream.annotation.Output;
 import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.SubscribableChannel;
 
-/**
- * @author CoderQian
- * @date 2019/1/17 10:32 AM
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- */
-
 public interface Channel {
 
     String CONSUMER = "consumer-test";

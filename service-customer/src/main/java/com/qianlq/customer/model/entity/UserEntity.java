@@ -1,29 +1,40 @@
 package com.qianlq.customer.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-
-import java.io.Serializable;
-
-/**
- * @author CoderQian
- * @date 2018-10-02 下午2:33
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- */
-
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@EqualsAndHashCode(callSuper = true)
-public class UserEntity extends BaseEntity implements Serializable {
-
-    private static final long serialVersionUID = 1L;
+public class UserEntity extends BaseEntity {
 
     private String id;
 
     private String name;
 
     private String birth;
+
+    public UserEntity(String id, String name, String birth) {
+        this.id = id;
+        this.name = name;
+        this.birth = birth;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
 }

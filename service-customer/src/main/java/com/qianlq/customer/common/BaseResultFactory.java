@@ -2,12 +2,6 @@ package com.qianlq.customer.common;
 
 import com.qianlq.customer.common.constant.Code;
 
-/**
- * @author CoderQian
- * @date 2018-10-02 下午2:52
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- */
-
 public class BaseResultFactory {
 
     /**
@@ -16,9 +10,8 @@ public class BaseResultFactory {
      * @param data 返回数据
      * @return BaseResult
      */
-    @SuppressWarnings("unchecked")
-    public static <T> BaseResult<T> createSuccessResult(Object data) {
-        return new BaseResult(Code.SUCCESS, data);
+    public static <T> BaseResult<T> createSuccessResult(T data) {
+        return new BaseResult<>(Code.SUCCESS, data);
     }
 
     /**

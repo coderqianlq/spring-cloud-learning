@@ -1,14 +1,5 @@
 package com.qianlq.customer.model.dto;
 
-import lombok.Data;
-
-/**
- * @author CoderQian
- * @date 2019/1/17 2:57 PM
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- */
-
-@Data
 public class UserDto {
 
     private String id;
@@ -16,4 +7,28 @@ public class UserDto {
     private String name;
 
     private String birth;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
 }

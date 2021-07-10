@@ -1,10 +1,6 @@
 package com.qianlq.customer.common.constant;
 
 /**
- * @author CoderQian
- * @date 2018-09-28 下午9:11
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- * <p>
  * [-999,999]    通用模块
  * [1000 - 1999] 登录注册，权限校验
  * [2000 - 2999]
@@ -31,8 +27,8 @@ public enum Code {
     BACK_DOORS(9008, "环境异常"),
     NET_ERROR(9009, "网络错误");
 
-    private int code;
-    private String msg;
+    private final int code;
+    private final String msg;
 
     Code(int code, String msg) {
         this.code = code;

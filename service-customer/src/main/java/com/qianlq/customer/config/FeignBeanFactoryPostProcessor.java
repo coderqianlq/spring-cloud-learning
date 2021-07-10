@@ -8,12 +8,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-06
- */
-
 @Component
 public class FeignBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
 

@@ -1,11 +1,5 @@
 package com.qianlq.core.service;
 
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-01
- */
-
 public interface TestService {
 
     /**

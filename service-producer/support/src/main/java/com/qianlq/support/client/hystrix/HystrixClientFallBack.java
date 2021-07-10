@@ -3,12 +3,6 @@ package com.qianlq.support.client.hystrix;
 import com.qianlq.support.client.TestClient;
 import org.springframework.stereotype.Component;
 
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-09
- */
-
 @Component
 public class HystrixClientFallBack implements TestClient {
 

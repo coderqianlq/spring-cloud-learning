@@ -6,13 +6,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-01
- */
-
-
 @FeignClient(name = "service-producer", fallback = HystrixClientFallBack.class)
 public interface TestClient {
 
