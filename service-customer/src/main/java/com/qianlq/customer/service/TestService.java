@@ -3,12 +3,6 @@ package com.qianlq.customer.service;
 import com.qianlq.customer.common.BaseResult;
 import com.qianlq.customer.model.dto.UserDto;
 
-/**
- * @author CoderQian
- * @date 2018-09-28 下午2:38
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- */
-
 public interface TestService {
 
     /**
@@ -55,5 +49,4 @@ public interface TestService {
      * @return BaseResult<UserDto>
      */
     BaseResult<UserDto> testMapStruct();
-
 }

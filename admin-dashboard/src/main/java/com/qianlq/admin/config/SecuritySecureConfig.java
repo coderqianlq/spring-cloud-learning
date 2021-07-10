@@ -7,12 +7,6 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
 import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-10
- */
-
 @Configuration
 public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
 
@@ -24,8 +18,8 @@ public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        // @formatter:off
-        SavedRequestAwareAuthenticationSuccessHandler successHandler = new SavedRequestAwareAuthenticationSuccessHandler();
+        SavedRequestAwareAuthenticationSuccessHandler successHandler =
+                new SavedRequestAwareAuthenticationSuccessHandler();
         successHandler.setTargetUrlParameter("redirectTo");
         successHandler.setDefaultTargetUrl(adminContextPath + "/");
 
@@ -43,6 +37,5 @@ public class SecuritySecureConfig extends WebSecurityConfigurerAdapter {
                         adminContextPath + "/instances",
                         adminContextPath + "/actuator/**"
                 );
-        // @formatter:on
     }
 }

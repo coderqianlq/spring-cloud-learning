@@ -12,11 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-/**
- * @author CoderQian
- * @date 2019/6/28 2:23 PM
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- */
 @Component
 public class CustomerFallback implements FallbackProvider {
 

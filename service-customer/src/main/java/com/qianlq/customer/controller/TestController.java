@@ -13,14 +13,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- * @author CoderQian
- * @date 2018-09-28 下午2:37
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- * <p>
- * 测试类
- */
-
 @RefreshScope
 @RestController
 @RequestMapping(value = "/v1/test")
@@ -36,7 +28,7 @@ public class TestController {
     @Value("${redis}")
     private String redis;
 
-    private TestService testService;
+    private final TestService testService;
 
     public TestController(TestService testService) {
         this.testService = testService;

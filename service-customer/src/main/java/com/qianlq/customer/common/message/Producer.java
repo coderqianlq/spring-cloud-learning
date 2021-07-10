@@ -7,22 +7,16 @@ import org.springframework.messaging.support.MessageBuilder;
 
 import javax.annotation.Resource;
 
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-02
- */
-
 @EnableBinding(Channel.class)
 public class Producer {
 
-    private Logger logger = LogManager.getLogger(Producer.class);
+    private final Logger LOGGER = LogManager.getLogger(Producer.class);
 
     @Resource
     private Channel channel;
 
     public void produce(String message) {
-        logger.info("发送消息: {}", message);
+        LOGGER.info("发送消息: {}", message);
         channel.producer().send(MessageBuilder.withPayload(message).build());
     }
 }

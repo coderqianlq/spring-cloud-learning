@@ -8,18 +8,11 @@ import io.swagger.annotations.ApiParam;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-
-/**
- * @author CoderQian
- * @version v1.0
- * @date 2020-04-01
- */
-
 @RestController
 @Api(value = "test-controller", tags = "测试模块")
 public class TestController implements TestClient {
 
-    private TestService testService;
+    private final TestService testService;
 
     public TestController(TestService testService) {
         this.testService = testService;

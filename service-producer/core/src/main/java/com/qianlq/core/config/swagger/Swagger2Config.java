@@ -20,13 +20,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * @author CoderQian
- * @date 2018-09-28 上午11:30
- * @concat <a href="mailto:qianlq0824@gmail.com">qianlq0824@gmail.com</a>
- * <p>
  * swagger2配置
  */
-
 @Configuration
 @EnableKnife4j
 @EnableSwagger2
